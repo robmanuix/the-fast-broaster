@@ -152,7 +152,7 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;text-transform:uppercas
 .hero-inner{position:relative;z-index:2;display:grid;padding-top:40px;padding-bottom:40px}
 .hero-copy{
   grid-area:1 / 1;
-  max-width:640px;
+  max-width:780px;
   visibility:hidden;opacity:0;
   transition:opacity .5s var(--ease),visibility .5s;
 }
@@ -176,8 +176,9 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;text-transform:uppercas
 .kicker::before{content:"";width:34px;height:2px;background:var(--red)}
 
 .hero h1{
-  font-size:clamp(44px,6.6vw,84px);letter-spacing:.01em;
+  font-size:clamp(40px,5.6vw,76px);letter-spacing:.01em;
   text-shadow:0 6px 28px rgba(0,0,0,.45);
+  text-wrap:balance;                 /* evita que quede una palabra suelta */
 }
 .hero p{
   font-size:clamp(15px,1.5vw,18px);

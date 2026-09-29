@@ -221,6 +221,16 @@
       desc: '10 tiras de pechuga empanizadas extra crujientes.' }
   ];
 
+  /* Enlace de WhatsApp con el pedido ya escrito */
+  var WHATSAPP = '34675732136';
+
+  function waLink(c) {
+    var precio = c.price ? ' (' + c.price + ')' : '';
+    var texto = 'Hola, quiero pedir: ' + c.name + precio +
+                '. ¿Me confirman disponibilidad?';
+    return 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(texto);
+  }
+
   var slider = document.getElementById('comboSlider');
   var dotsBox = document.getElementById('comboDots');
   var track = document.createElement('div');
@@ -251,7 +261,7 @@
       '<figure class="combo-photo"><img src="' + c.img + '" alt="' + c.alt + '" loading="lazy"></figure>' +
       '<div class="combo-desc">' +
         '<p>' + c.desc + '</p>' +
-        '<a href="#contacto" class="btn btn-red">Pedir este combo</a>' +
+        '<a href="' + waLink(c) + '" target="_blank" rel="noopener" class="btn btn-red">Pedir este combo</a>' +
       '</div>';
 
     /* Si la foto todavía no existe, la tarjeta muestra un marcador */
