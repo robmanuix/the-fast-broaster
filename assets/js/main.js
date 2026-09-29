@@ -93,16 +93,6 @@
     document.getElementById('heroPrev').addEventListener('click', function () { go(i - 1); restart(); });
     document.getElementById('heroNext').addEventListener('click', function () { go(i + 1); restart(); });
 
-    /* Pausa al pasar el cursor */
-    hero.addEventListener('mouseenter', function () {
-      clearInterval(timer);
-      if (bar) bar.style.animationPlayState = 'paused';
-    });
-    hero.addEventListener('mouseleave', function () {
-      if (bar) bar.style.animationPlayState = '';
-      restart();
-    });
-
     /* Pausa si la pestaña no está visible */
     document.addEventListener('visibilitychange', function () {
       if (document.hidden) { clearInterval(timer); } else { restart(); }

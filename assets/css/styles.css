@@ -141,13 +141,10 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;text-transform:uppercas
 /* Overlay oscuro */
 .hero-overlay{
   position:absolute;inset:0;
-  background:
-    linear-gradient(90deg,rgba(10,10,10,.82) 0%,rgba(10,10,10,.62) 45%,rgba(10,10,10,.35) 100%),
-    linear-gradient(180deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,.15) 40%,rgba(10,10,10,.75) 100%);
-}
-.hero-overlay::after{
-  content:"";position:absolute;inset:0;
-  box-shadow:inset 0 0 220px rgba(0,0,0,.65);
+  background:linear-gradient(90deg,
+    rgba(10,10,10,.7) 0%,
+    rgba(10,10,10,.7) 30%,
+    rgba(10,10,10,0) 100%);
 }
 
 /* Copy */
