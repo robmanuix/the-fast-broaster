@@ -311,6 +311,52 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;text-transform:uppercas
 }
 .combo-dots button.on{background:var(--red);transform:scale(1.35)}
 
+/* Precios múltiples (fritadas) */
+.combo-prices{margin:18px 0 0;display:grid;gap:6px}
+.combo-prices li{display:flex;align-items:baseline;gap:10px}
+.combo-prices span{font-size:13px;color:var(--muted);min-width:88px}
+.combo-prices b{
+  font-family:var(--font-cta);font-size:24px;font-weight:600;
+  line-height:1;color:var(--red);
+}
+
+/* Marcador cuando la foto aún no existe */
+.combo-photo.no-img,.cubo-photo.no-img{
+  background:var(--cream) url("../img/crispy-01.png") center/48% no-repeat;
+  position:relative;
+}
+.combo-photo.no-img img,.cubo-photo.no-img img{display:none}
+.combo-photo.no-img::after,.cubo-photo.no-img::after{
+  content:"Foto próximamente";
+  position:absolute;left:0;right:0;bottom:16px;text-align:center;
+  font-family:var(--font-cta);font-size:15px;letter-spacing:.16em;
+  text-transform:uppercase;color:#a9a9a9;
+}
+
+/* ---------- Menú (cubos) ---------- */
+.cubos{background:var(--cream) url("../img/bg-about-us.webp") center/cover no-repeat;padding:clamp(56px,8vw,100px) 0}
+.section-lead{
+  text-align:center;color:var(--muted);max-width:52ch;
+  margin:-24px auto clamp(32px,5vw,52px);
+}
+.cubo-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,36px)}
+.cubo{background:var(--white);display:grid;grid-template-columns:1fr 1.05fr;align-items:stretch}
+.cubo-photo{margin:0;overflow:hidden;position:relative;background:var(--cream);min-height:280px}
+.cubo-photo img{width:100%;height:100%;display:block;object-fit:cover;transform:scale(1.03);transition:transform .8s var(--ease)}
+.cubo:hover .cubo-photo img{transform:scale(1.12)}
+.cubo-body{padding:clamp(22px,2.6vw,34px);display:flex;flex-direction:column;justify-content:center}
+.cubo-body .tag{
+  align-self:flex-start;background:var(--darker);color:#fff;font-family:var(--font-cta);
+  font-size:15px;line-height:1;letter-spacing:.16em;padding:7px 12px 5px;margin-bottom:14px;
+}
+.cubo-body h3{font-size:clamp(30px,3.2vw,42px);line-height:.98}
+.cubo-body p{color:var(--muted);margin:12px 0 0}
+.cubo-body .cubo-price{
+  font-family:var(--font-cta);font-size:34px;font-weight:600;line-height:1;
+  color:var(--red);margin:16px 0 0;
+}
+.cubo-body .btn{align-self:flex-start;margin-top:22px}
+
 /* ---------- Delivery ---------- */
 .foodtruck{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
 .ft-media{overflow:hidden;position:relative;aspect-ratio:16/9;min-height:260px}
@@ -404,6 +450,7 @@ body.footer-fixed .page{margin-bottom:var(--footer-h,0px)}
   .combo-slide{grid-template-columns:1fr 1.2fr;gap:26px}
   .combo-desc{grid-column:1 / -1}
   .combo-desc p{max-width:none}
+  .cubo-grid{grid-template-columns:1fr}
   .foodtruck{grid-template-columns:1fr}
   .ft-media{aspect-ratio:16/10}
 }
@@ -423,6 +470,9 @@ body.footer-fixed .page{margin-bottom:var(--footer-h,0px)}
   .header-actions .socials{display:none}
   .hero{min-height:70vh}
   .combo-slide{grid-template-columns:1fr;gap:22px;justify-items:center;text-align:center}
+  .combo-prices li{justify-content:center}
+  .cubo{grid-template-columns:1fr}
+  .cubo-photo{min-height:0;aspect-ratio:16/10}
   .combo-info,.combo-desc{width:100%}
   .combo-photo{aspect-ratio:1/1;width:100%}
   .combo-desc p{margin-left:auto;margin-right:auto}

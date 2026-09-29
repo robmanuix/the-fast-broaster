@@ -122,40 +122,103 @@
     restart();
   })();
 
-  /* ---------- 5. Datos de los combos ---------- */
+  /* ---------- 5. Datos de la carta ---------- */
+  /* Las fotos van en assets/img/menu/. Si aún no existe el archivo,
+     la tarjeta muestra un marcador y el sitio no se rompe. */
   var combos = [
-    {
-      tag: 'Combo 1',
-      name: 'Combo<br>Tiras<br>Crispy',
-      price: '5.90 €',
-      img: 'assets/img/combo-1.jpg',
-      alt: 'Combo de tiras crispy con papas fritas y salsas',
-      desc: 'Deliciosas tiras de pechuga de pollo con nuestro empanizado extra crujiente. Acompañadas de papas fritas doradas y dos salsas de la casa a tu elección.'
-    },
-    {
-      tag: 'Combo 2',
-      name: 'Combo<br>Broaster<br>Familiar',
-      price: '18.50 €',
-      img: 'assets/img/about-2.jpg',
-      alt: 'Plato familiar de pollo broaster con papas',
-      desc: 'Ocho presas de pollo broaster jugoso, papas fritas grandes, ensalada fresca y cuatro bebidas. El plan perfecto para compartir en casa.'
-    },
-    {
-      tag: 'Combo 3',
-      name: 'Combo<br>Nuggets<br>Dippers',
-      price: '4.50 €',
-      img: 'assets/img/about-3.jpg',
-      alt: 'Nuggets de pollo crujientes con salsa',
-      desc: 'Bocados de pollo súper crujientes ideales para mojar. Vienen con papas, bebida y nuestra salsa ranch preparada al momento.'
-    },
-    {
-      tag: 'Combo 4',
-      name: 'Combo<br>Personal<br>Crunch',
-      price: '7.20 €',
-      img: 'assets/img/about-1.jpg',
-      alt: 'Combo personal de pollo crujiente con papas',
-      desc: 'Tres presas de pollo al instante, papas fritas, pan de ajo y bebida. Tu almuerzo rápido sin renunciar al sabor.'
-    }
+    { cat: 'Pollo', name: 'Duocronch', price: '6,99 €',
+      img: 'assets/img/menu/01-duocronch.jpg',
+      alt: 'Combo Duocronch: dos piezas de pollo crujiente con patatas y bebida',
+      desc: '2 piezas de pollo + patata + bebida.' },
+
+    { cat: 'Pollo', name: 'Triplecronch', price: '8,99 €',
+      img: 'assets/img/menu/02-triplecronch.jpg',
+      alt: 'Combo Triplecronch: tres piezas de pollo crujiente con patatas y bebida',
+      desc: '3 piezas de pollo + patata + bebida.' },
+
+    { cat: 'Pollo', name: 'Megacronch', price: '16,95 €',
+      img: 'assets/img/menu/03-megacronch.jpg',
+      alt: 'Combo Megacronch: seis piezas de pollo crujiente con patatas y bebidas',
+      desc: '6 piezas de pollo + 2 raciones de patata + 2 bebidas.' },
+
+    { cat: 'Pollo', name: 'Combo Criminal', price: '23,95 €',
+      img: 'assets/img/menu/04-combo-criminal.jpg',
+      alt: 'Combo Criminal: nueve piezas de pollo crujiente con patatas y bebida de 2 litros',
+      desc: '9 piezas de pollo + 3 patatas + bebida de 2 litros.' },
+
+    { cat: 'Pollo', name: 'Mega Party', price: '30 €',
+      img: 'assets/img/menu/05-mega-party.jpg',
+      alt: 'Mega Party: doce piezas de pollo crujiente con patatas y bebida grande',
+      desc: '12 piezas de pollo + 2 raciones de patatas + 1 bebida grande.' },
+
+    { cat: 'Pollo', name: 'Combo Mini', price: '3,99 €',
+      img: 'assets/img/menu/06-combo-mini.jpg',
+      alt: 'Combo Mini: una pieza de pollo crujiente con patatas y bebida',
+      desc: '1 pieza de pollo + patata + bebida.' },
+
+    { cat: 'Alitas', name: 'Combo 1 Alitas', price: '3,99 €',
+      img: 'assets/img/menu/07-combo1-alitas.jpg',
+      alt: 'Combo de tres alitas de pollo crujientes con patatas y bebida',
+      desc: '3 alitas + patatas + bebida.' },
+
+    { cat: 'Pollo', name: 'Lowcost', price: '4,99 €',
+      img: 'assets/img/menu/08-lowcost.jpg',
+      alt: 'Combo Lowcost: pieza de pollo con arroz y papa',
+      desc: '1 pieza de pollo + 1 porción de arroz + 1 porción de papa.' },
+
+    { cat: 'Alitas', name: 'Combo 2 Alitas', price: '6 €',
+      img: 'assets/img/menu/09-combo2-alitas.jpg',
+      alt: 'Combo de seis alitas de pollo crujientes con papa y bebida',
+      desc: '6 alitas + papa + bebida.' },
+
+    { cat: 'Alitas', name: 'Combo 3 Alitas', price: '10,99 €',
+      img: 'assets/img/menu/10-combo3-alitas.jpg',
+      alt: 'Combo de doce alitas de pollo crujientes con papa y dos bebidas',
+      desc: '12 alitas + papa + 2 bebidas.' },
+
+    { cat: 'Fritadas', name: 'Fritada Mixta',
+      prices: [
+        { label: '1 persona', value: '10 €' },
+        { label: '2 personas', value: '18 €' },
+        { label: '3 personas', value: '25 €' }
+      ],
+      img: 'assets/img/menu/11-fritada-mixta.jpg',
+      alt: 'Fritada mixta con cerdo frito, pollo crujiente, ensalada y patacón',
+      desc: 'Ensalada, patacón o patatas fritas, pollo crujiente y cerdo frito.' },
+
+    { cat: 'Fritadas', name: 'Fritada o Chicharrón',
+      prices: [
+        { label: '1 persona', value: '12 €' },
+        { label: '2 personas', value: '20 €' }
+      ],
+      img: 'assets/img/menu/12-fritada-chicharron.jpg',
+      alt: 'Fritada de chicharrón con ensalada criolla y patacón',
+      desc: 'Ensalada criolla, patacón o patata frita y cerdo frito.' },
+
+    { cat: 'Porciones', name: 'Porción de Arroz', price: '3 €',
+      img: 'assets/img/menu/13-porcion-arroz.jpg',
+      alt: 'Porción de arroz blanco',
+      desc: 'Porción individual de arroz blanco recién hecho.' },
+
+    { cat: 'Porciones', name: 'Porción de Patata Frita', price: '3 €',
+      img: 'assets/img/menu/14-porcion-patata.jpg',
+      alt: 'Porción de patatas fritas doradas',
+      desc: 'Porción individual de patatas fritas doradas y crujientes.' },
+
+    { cat: 'Porciones', name: 'Porción de Ensalada', price: '3 €',
+      img: 'assets/img/menu/15-porcion-ensalada.jpg',
+      alt: 'Porción de ensalada fresca',
+      desc: 'Porción individual de ensalada fresca del día.' },
+
+    { cat: 'Tiras', name: 'Tender Five', price: '7 €',
+      img: 'assets/img/menu/16-tender-five.jpg',
+      alt: 'Cinco tiras de pechuga de pollo empanizadas',
+      desc: '5 tiras de pechuga empanizadas extra crujientes.' },
+
+    { cat: 'Tiras', name: 'Tender XL', price: '12 €',
+      img: 'assets/img/menu/17-tender-xl.jpg',
+      alt: 'Diez tiras de pechuga de pollo empanizadas',
+      desc: '10 tiras de pechuga empanizadas extra crujientes.' }
   ];
 
   var slider = document.getElementById('comboSlider');
@@ -168,23 +231,40 @@
   combos.forEach(function (c, i) {
     var slide = document.createElement('article');
     slide.className = 'combo-slide' + (i === 0 ? ' active' : '');
+    var priceHTML;
+    if (c.prices) {
+      priceHTML = '<ul class="combo-prices">';
+      c.prices.forEach(function (p) {
+        priceHTML += '<li><span>' + p.label + '</span><b>' + p.value + '</b></li>';
+      });
+      priceHTML += '</ul>';
+    } else {
+      priceHTML = '<p class="combo-price">' + c.price + '</p>';
+    }
+
     slide.innerHTML =
       '<div class="combo-info">' +
-        '<span class="tag">' + c.tag + '</span>' +
+        '<span class="tag">' + c.cat + '</span>' +
         '<h3>' + c.name + '</h3>' +
-        '<p class="combo-price">' + c.price + '</p>' +
+        priceHTML +
       '</div>' +
       '<figure class="combo-photo"><img src="' + c.img + '" alt="' + c.alt + '" loading="lazy"></figure>' +
       '<div class="combo-desc">' +
         '<p>' + c.desc + '</p>' +
         '<a href="#contacto" class="btn btn-red">Pedir este combo</a>' +
       '</div>';
+
+    /* Si la foto todavía no existe, la tarjeta muestra un marcador */
+    var photo = slide.querySelector('.combo-photo');
+    slide.querySelector('.combo-photo img').addEventListener('error', function () {
+      photo.classList.add('no-img');
+    });
     track.appendChild(slide);
 
     var dot = document.createElement('button');
     dot.type = 'button';
     dot.className = i === 0 ? 'on' : '';
-    dot.setAttribute('aria-label', 'Ver ' + c.tag);
+    dot.setAttribute('aria-label', 'Ver ' + c.name);
     dot.addEventListener('click', function () { show(i); });
     dotsBox.appendChild(dot);
   });
@@ -216,6 +296,11 @@
     if (Math.abs(dx) > 50) show(dx < 0 ? index + 1 : index - 1);
     startX = null;
   }, { passive: true });
+
+  /* Marcador para las fotos de los cubos que aún no existen */
+  Array.prototype.forEach.call(document.querySelectorAll('.cubo-photo img'), function (img) {
+    img.addEventListener('error', function () { img.parentNode.classList.add('no-img'); });
+  });
 
   /* ---------- 6. Parallax de las ilustraciones ---------- */
   (function parallaxDeco() {
