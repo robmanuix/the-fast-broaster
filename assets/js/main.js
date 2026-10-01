@@ -117,7 +117,7 @@
      la tarjeta muestra un marcador y el sitio no se rompe. */
   var combos = [
     { cat: 'Pollo', name: 'Duocronch', price: '6,99 €',
-      img: 'assets/img/menu/01-duocronch.jpg',
+      img: 'assets/img/menu/01-duocronch.png',
       alt: 'Combo Duocronch: dos piezas de pollo crujiente con patatas y bebida',
       desc: '2 piezas de pollo + patata + bebida.' },
 
@@ -154,17 +154,17 @@
     { cat: 'Pollo', name: 'Lowcost', price: '4,99 €',
       img: 'assets/img/menu/08-lowcost.jpg',
       alt: 'Combo Lowcost: pieza de pollo con arroz y papa',
-      desc: '1 pieza de pollo + 1 porción de arroz + 1 porción de papa.' },
+      desc: '1 pieza de pollo + 1 porción de arroz + 1 porción de patata.' },
 
     { cat: 'Alitas', name: 'Combo 2 Alitas', price: '6 €',
       img: 'assets/img/menu/09-combo2-alitas.jpg',
-      alt: 'Combo de seis alitas de pollo crujientes con papa y bebida',
-      desc: '6 alitas + papa + bebida.' },
+      alt: 'Combo de seis alitas de pollo crujientes con patata y bebida',
+      desc: '6 alitas + patata + bebida.' },
 
     { cat: 'Alitas', name: 'Combo 3 Alitas', price: '10,99 €',
       img: 'assets/img/menu/10-combo3-alitas.jpg',
-      alt: 'Combo de doce alitas de pollo crujientes con papa y dos bebidas',
-      desc: '12 alitas + papa + 2 bebidas.' },
+      alt: 'Combo de doce alitas de pollo crujientes con patata y dos bebidas',
+      desc: '12 alitas + patata + 2 bebidas.' },
 
     { cat: 'Fritadas', name: 'Fritada Mixta',
       prices: [
