@@ -119,17 +119,17 @@
     { cat: 'Pollo', name: 'Duocronch', price: '6,99 €',
       img: 'assets/img/menu/01-duocronch.png',
       alt: 'Combo Duocronch: dos piezas de pollo crujiente con patatas y bebida',
-      desc: '2 piezas de pollo + patata + bebida.' },
+      desc: '2 piezas de pollo + patatas + bebida.' },
 
     { cat: 'Pollo', name: 'Triplecronch', price: '8,99 €',
       img: 'assets/img/menu/02-triplecronch.jpg',
       alt: 'Combo Triplecronch: tres piezas de pollo crujiente con patatas y bebida',
-      desc: '3 piezas de pollo + patata + bebida.' },
+      desc: '3 piezas de pollo + patatas + bebida.' },
 
     { cat: 'Pollo', name: 'Megacronch', price: '16,95 €',
       img: 'assets/img/menu/03-megacronch.jpg',
       alt: 'Combo Megacronch: seis piezas de pollo crujiente con patatas y bebidas',
-      desc: '6 piezas de pollo + 2 raciones de patata + 2 bebidas.' },
+      desc: '6 piezas de pollo + 2 raciones de patatas + 2 bebidas.' },
 
     { cat: 'Pollo', name: 'Combo Criminal', price: '23,95 €',
       img: 'assets/img/menu/04-combo-criminal.jpg',
@@ -144,7 +144,7 @@
     { cat: 'Pollo', name: 'Combo Mini', price: '3,99 €',
       img: 'assets/img/menu/06-combo-mini.jpg',
       alt: 'Combo Mini: una pieza de pollo crujiente con patatas y bebida',
-      desc: '1 pieza de pollo + patata + bebida.' },
+      desc: '1 pieza de pollo + patatas + bebida.' },
 
     { cat: 'Alitas', name: 'Combo 1 Alitas', price: '3,99 €',
       img: 'assets/img/menu/07-combo1-alitas.jpg',
@@ -154,17 +154,17 @@
     { cat: 'Pollo', name: 'Lowcost', price: '4,99 €',
       img: 'assets/img/menu/08-lowcost.jpg',
       alt: 'Combo Lowcost: pieza de pollo con arroz y papa',
-      desc: '1 pieza de pollo + 1 porción de arroz + 1 porción de patata.' },
+      desc: '1 pieza de pollo + 1 porción de arroz + 1 porción de patatas.' },
 
     { cat: 'Alitas', name: 'Combo 2 Alitas', price: '6 €',
       img: 'assets/img/menu/09-combo2-alitas.jpg',
-      alt: 'Combo de seis alitas de pollo crujientes con patata y bebida',
-      desc: '6 alitas + patata + bebida.' },
+      alt: 'Combo de seis alitas de pollo crujientes con patatas y bebida',
+      desc: '6 alitas + patatas + bebida.' },
 
     { cat: 'Alitas', name: 'Combo 3 Alitas', price: '10,99 €',
       img: 'assets/img/menu/10-combo3-alitas.jpg',
-      alt: 'Combo de doce alitas de pollo crujientes con patata y dos bebidas',
-      desc: '12 alitas + patata + 2 bebidas.' },
+      alt: 'Combo de doce alitas de pollo crujientes con patatas y dos bebidas',
+      desc: '12 alitas + patatas + 2 bebidas.' },
 
     { cat: 'Fritadas', name: 'Fritada Mixta',
       prices: [

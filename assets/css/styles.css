@@ -17,6 +17,8 @@
   --container:1240px;
   --header-h:78px;
   --ease:cubic-bezier(.22,.61,.36,1);
+  /* Realce de color de las fotos de la carta (más dorado y vivo) */
+  --photo-filter:saturate(1.35) contrast(1.08) brightness(1.07) sepia(.18) hue-rotate(-9deg);
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -298,7 +300,11 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;text-transform:uppercas
 .combo-price{color:var(--red);font-family:var(--font-cta);font-size:32px;font-weight:600;line-height:1;margin-top:20px}
 
 .combo-photo{overflow:hidden;background:var(--cream);aspect-ratio:1/1.12}
-.combo-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform .8s var(--ease)}
+.combo-photo img{
+  width:100%;height:100%;object-fit:cover;transform:scale(1.02);
+  filter:var(--photo-filter);
+  transition:transform .8s var(--ease);
+}
 .combo-slide.active .combo-photo img{transform:scale(1.06)}
 .combo-photo:hover img{transform:scale(1.14)}
 
@@ -342,7 +348,11 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;text-transform:uppercas
 .cubo-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,36px)}
 .cubo{background:var(--white);display:grid;grid-template-columns:1fr 1.05fr;align-items:stretch}
 .cubo-photo{margin:0;overflow:hidden;position:relative;background:var(--cream);min-height:280px}
-.cubo-photo img{width:100%;height:100%;display:block;object-fit:cover;transform:scale(1.03);transition:transform .8s var(--ease)}
+.cubo-photo img{
+  width:100%;height:100%;display:block;object-fit:cover;transform:scale(1.03);
+  filter:var(--photo-filter);
+  transition:transform .8s var(--ease);
+}
 .cubo:hover .cubo-photo img{transform:scale(1.12)}
 .cubo-body{padding:clamp(22px,2.6vw,34px);display:flex;flex-direction:column;justify-content:center}
 .cubo-body .tag{
