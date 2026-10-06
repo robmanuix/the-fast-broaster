@@ -30,19 +30,48 @@
 
   /* ---------- 3. Enlace activo según la sección visible ---------- */
   var links = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
-  var sections = links
-    .map(function (l) { return document.querySelector(l.getAttribute('href')); })
-    .filter(Boolean);
+  var sections = [];
+  links.forEach(function (l) {
+    var el = document.querySelector(l.getAttribute('href'));
+    if (el && sections.indexOf(el) === -1) sections.push(el);
+  });
+
+  /* El footer está fijo al fondo: su offsetTop no sirve para medir,
+     así que se activa solo cuando el scroll llega abajo del todo. */
+  function esFijo(el) {
+    return window.getComputedStyle(el).position === 'fixed';
+  }
 
   function setActive() {
-    var pos = window.scrollY + window.innerHeight * 0.3;
-    var current = sections[0];
-    sections.forEach(function (s) { if (s.offsetTop <= pos) current = s; });
+    var pos = window.scrollY + window.innerHeight * 0.35;
+    var current = null;
+
+    sections.forEach(function (s) {
+      if (esFijo(s)) return;
+      var top = s.getBoundingClientRect().top + window.scrollY;
+      if (top <= pos) current = s;
+    });
+
+    if (!current) {
+      current = sections.filter(function (s) { return !esFijo(s); })[0];
+    }
+
+    /* Al final de la página manda el footer (Contacto) */
+    var doc = document.documentElement;
+    var alFinal = window.innerHeight + window.scrollY >= doc.scrollHeight - 80;
+    if (alFinal) {
+      var contacto = document.getElementById('contacto');
+      if (contacto) current = contacto;
+    }
+
+    if (!current) return;
     links.forEach(function (l) {
       l.classList.toggle('active', l.getAttribute('href') === '#' + current.id);
     });
   }
+
   window.addEventListener('scroll', setActive, { passive: true });
+  window.addEventListener('resize', setActive);
   setActive();
 
   /* ---------- 4. Carrusel del hero ---------- */
