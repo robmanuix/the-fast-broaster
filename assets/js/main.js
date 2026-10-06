@@ -12,6 +12,16 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  /* Botón flotante para volver arriba */
+  var toTop = document.getElementById('toTop');
+  if (toTop) {
+    var verToTop = function () {
+      toTop.classList.toggle('show', window.scrollY > 400);
+    };
+    window.addEventListener('scroll', verToTop, { passive: true });
+    verToTop();
+  }
+
   /* ---------- 2. Menú móvil ---------- */
   var burger = document.getElementById('burger');
   var nav = document.getElementById('nav');
