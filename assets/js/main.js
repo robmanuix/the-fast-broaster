@@ -155,8 +155,8 @@
   /* Las fotos van en assets/img/menu/. Si aún no existe el archivo,
      la tarjeta muestra un marcador y el sitio no se rompe. */
   var combos = [
-    { cat: 'Pollo', name: 'Duocronch', price: '6,99 €',
-      img: 'assets/img/menu/01-duocronch.png',
+    { cat: 'Pollo', name: 'Duocronch', price: '6,99 €', plano: true,
+      img: 'assets/img/menu/01-duocronch.jpg',
       alt: 'Combo Duocronch: dos piezas de pollo crujiente con patatas y bebida',
       desc: '2 piezas de pollo + patatas + bebida.' },
 
@@ -265,7 +265,8 @@
 
   combos.forEach(function (c) {
     var row = document.createElement('article');
-    row.className = 'combo-row';
+    /* 'plano' = foto nueva con fondo degradado: no lleva el realce dorado */
+    row.className = 'combo-row' + (c.plano ? ' sin-filtro' : '');
 
     var priceHTML;
     if (c.prices) {

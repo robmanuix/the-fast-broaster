@@ -312,6 +312,8 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;text-transform:uppercas
   transition:transform .9s var(--ease);
 }
 .combo-row:hover .combo-photo img{transform:scale(1.12)}
+/* Fotos nuevas con fondo degradado: ya vienen con el color definitivo */
+.combo-row.sin-filtro .combo-photo img{filter:none}
 
 /* Precios múltiples (fritadas) */
 .combo-prices{margin:18px 0 0;display:grid;gap:6px}
