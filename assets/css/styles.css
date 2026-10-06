@@ -90,13 +90,16 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;text-transform:uppercas
 
 .brand{
   position:absolute;left:50%;top:2px;transform:translateX(-50%);
-  width:168px;height:168px;border-radius:50%;
+  width:var(--logo-size,196px);height:var(--logo-size,196px);border-radius:50%;
   background:var(--white);
   display:grid;place-items:center;
   padding:4px;
-  transition:transform .3s var(--ease);
+  transition:width .4s var(--ease),height .4s var(--ease),
+             padding .4s var(--ease),transform .3s var(--ease);
 }
 .brand:hover{transform:translateX(-50%) scale(1.05)}
+/* Al bajar, el logo se encoge */
+.site-header.scrolled .brand{--logo-size:104px;padding:2px}
 .brand img{width:100%;height:100%;object-fit:contain}
 
 .header-actions{display:flex;align-items:center;gap:14px}
@@ -128,6 +131,9 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;text-transform:uppercas
   background:var(--darker);
   isolation:isolate;
 }
+/* OCULTO a petición del cliente. Para recuperarlo: borra la línea de abajo
+   y el padding-top extra de .combos. */
+.hero{display:none}
 
 /* Carrusel de fondo */
 .hero-bg{position:absolute;inset:0;z-index:0}
@@ -258,7 +264,10 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;text-transform:uppercas
 .about-gallery .g3{aspect-ratio:191/211;width:75%}
 
 /* ---------- Combos ---------- */
-.combos{position:relative;padding:clamp(60px,9vw,110px) 0;overflow:hidden}
+.combos{
+  position:relative;overflow:hidden;
+  padding:calc(var(--header-h) + clamp(80px,10vw,160px)) 0 clamp(60px,9vw,110px);
+}
 .section-title{
   text-align:center;font-size:clamp(30px,3.4vw,42px);letter-spacing:.16em;margin-bottom:clamp(36px,5vw,64px);
 }
@@ -483,7 +492,8 @@ body.footer-fixed .page{margin-bottom:var(--footer-h,0px)}
   }
   .nav.open{max-height:300px;padding:12px 24px 22px}
   .nav-link{padding:12px 0;border-bottom:1px solid #eee;font-size:20px}
-  .brand{width:112px;height:112px;top:2px}
+  .brand{--logo-size:126px;top:2px}
+  .site-header.scrolled .brand{--logo-size:78px}
   .header-actions .socials{display:none}
   .hero{min-height:70vh}
   .combo-row{grid-template-columns:1fr;gap:20px;text-align:center;justify-items:center}
