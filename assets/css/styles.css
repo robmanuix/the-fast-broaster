@@ -9,6 +9,7 @@
   --dark:#262626;
   --darker:#1C1C1C;
   --cream:#F4F0E8;
+  --header-bg:#f9f9f9;
   --white:#fff;
   --muted:#5b5b5b;
   --font-display:"Teko","Arial Narrow",sans-serif;
@@ -67,7 +68,7 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;text-transform:uppercas
 /* ---------- Header ---------- */
 .site-header{
   position:fixed;inset:0 0 auto 0;z-index:100;
-  background:var(--white);
+  background:var(--header-bg);
   height:var(--header-h);
   transition:box-shadow .3s;
 }
@@ -93,6 +94,7 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;text-transform:uppercas
   width:var(--logo-size,196px);height:var(--logo-size,196px);border-radius:50%;
   background:var(--white);
   display:grid;place-items:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.14);
   padding:4px;
   transition:width .4s var(--ease),height .4s var(--ease),
              padding .4s var(--ease),transform .3s var(--ease);
@@ -485,7 +487,7 @@ body.footer-fixed .page{margin-bottom:var(--footer-h,0px)}
   .burger{display:flex}
   .nav{
     position:fixed;inset:var(--header-h) 0 auto 0;
-    flex-direction:column;gap:0;background:#fff;
+    flex-direction:column;gap:0;background:var(--header-bg);
     padding:0 24px;max-height:0;overflow:hidden;
     box-shadow:0 12px 24px rgba(0,0,0,.12);
     transition:max-height .4s var(--ease),padding .4s var(--ease);
