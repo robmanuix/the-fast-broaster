@@ -221,16 +221,13 @@
     return 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(texto);
   }
 
-  var slider = document.getElementById('comboSlider');
-  var dotsBox = document.getElementById('comboDots');
-  var track = document.createElement('div');
-  track.className = 'combo-track';
-  slider.appendChild(track);
-  var index = 0;
+  /* ---------- Lista de combos, uno debajo de otro ---------- */
+  var list = document.getElementById('comboList');
 
-  combos.forEach(function (c, i) {
-    var slide = document.createElement('article');
-    slide.className = 'combo-slide' + (i === 0 ? ' active' : '');
+  combos.forEach(function (c) {
+    var row = document.createElement('article');
+    row.className = 'combo-row';
+
     var priceHTML;
     if (c.prices) {
       priceHTML = '<ul class="combo-prices">';
@@ -242,60 +239,41 @@
       priceHTML = '<p class="combo-price">' + c.price + '</p>';
     }
 
-    slide.innerHTML =
-      '<div class="combo-info">' +
+    row.innerHTML =
+      '<figure class="combo-photo"><img src="' + c.img + '" alt="' + c.alt + '" loading="lazy"></figure>' +
+      '<div class="combo-body">' +
         '<span class="tag">' + c.cat + '</span>' +
         '<h3>' + c.name + '</h3>' +
         priceHTML +
-      '</div>' +
-      '<figure class="combo-photo"><img src="' + c.img + '" alt="' + c.alt + '" loading="lazy"></figure>' +
-      '<div class="combo-desc">' +
-        '<p>' + c.desc + '</p>' +
+        '<p class="combo-desc">' + c.desc + '</p>' +
         '<a href="' + waLink(c) + '" target="_blank" rel="noopener" class="btn btn-red">Pedir este combo</a>' +
       '</div>';
 
     /* Si la foto todavía no existe, la tarjeta muestra un marcador */
-    var photo = slide.querySelector('.combo-photo');
-    slide.querySelector('.combo-photo img').addEventListener('error', function () {
+    var photo = row.querySelector('.combo-photo');
+    row.querySelector('.combo-photo img').addEventListener('error', function () {
       photo.classList.add('no-img');
     });
-    track.appendChild(slide);
 
-    var dot = document.createElement('button');
-    dot.type = 'button';
-    dot.className = i === 0 ? 'on' : '';
-    dot.setAttribute('aria-label', 'Ver ' + c.name);
-    dot.addEventListener('click', function () { show(i); });
-    dotsBox.appendChild(dot);
+    list.appendChild(row);
   });
 
-  var slides = track.querySelectorAll('.combo-slide');
-  var dots = dotsBox.querySelectorAll('button');
-
-  function show(i) {
-    index = (i + combos.length) % combos.length;
-    track.style.transform = 'translateX(' + (-index * 100) + '%)';
-    slides.forEach(function (s, n) { s.classList.toggle('active', n === index); });
-    dots.forEach(function (d, n) { d.classList.toggle('on', n === index); });
+  /* Cada fila aparece al entrar en pantalla */
+  var rows = list.querySelectorAll('.combo-row');
+  if ('IntersectionObserver' in window &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var rowObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          rowObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+    Array.prototype.forEach.call(rows, function (r) { rowObserver.observe(r); });
+  } else {
+    Array.prototype.forEach.call(rows, function (r) { r.classList.add('in'); });
   }
-
-  document.getElementById('prevCombo').addEventListener('click', function () { show(index - 1); });
-  document.getElementById('nextCombo').addEventListener('click', function () { show(index + 1); });
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowLeft') show(index - 1);
-    if (e.key === 'ArrowRight') show(index + 1);
-  });
-
-  /* Deslizar con el dedo en móvil */
-  var startX = null;
-  slider.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
-  slider.addEventListener('touchend', function (e) {
-    if (startX === null) return;
-    var dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) > 50) show(dx < 0 ? index + 1 : index - 1);
-    startX = null;
-  }, { passive: true });
 
   /* Marcador para las fotos de los cubos que aún no existen */
   Array.prototype.forEach.call(document.querySelectorAll('.cubo-photo img'), function (img) {
