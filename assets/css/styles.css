@@ -96,12 +96,11 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;text-transform:uppercas
   display:grid;place-items:center;
   padding:4px;
   transition:width .4s var(--ease),height .4s var(--ease),
-             padding .4s var(--ease),box-shadow .4s var(--ease),
-             transform .3s var(--ease);
+             padding .4s var(--ease),transform .3s var(--ease);
 }
 .brand:hover{transform:translateX(-50%) scale(1.05)}
-/* Al bajar, el logo se encoge y aparece la sombra */
-.site-header.scrolled .brand{--logo-size:104px;padding:2px;box-shadow:0 6px 18px rgba(0,0,0,.14)}
+/* Al bajar, el logo solo se encoge: la sombra la lleva el header */
+.site-header.scrolled .brand{--logo-size:104px;padding:2px}
 .brand img{width:100%;height:100%;object-fit:contain}
 
 .header-actions{display:flex;align-items:center;gap:14px}
