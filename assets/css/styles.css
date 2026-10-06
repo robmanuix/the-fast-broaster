@@ -140,22 +140,27 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;text-transform:uppercas
 .hero-slide.is-active img{animation:kenBurns 8s ease-out forwards}
 @keyframes kenBurns{from{transform:scale(1.02)}to{transform:scale(1.12)}}
 
-/* Overlay oscuro */
-.hero-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(90deg,
-    rgba(10,10,10,.7) 0%,
-    rgba(10,10,10,.7) 30%,
-    rgba(10,10,10,0) 100%);
-}
+/* Sin overlay: las fotos se ven a su color real */
+.hero-overlay{display:none}
 
 /* Copy */
 .hero-inner{position:relative;z-index:2;display:grid;padding-top:40px;padding-bottom:40px}
+/* Panel de cristal: da contraste al texto sin oscurecer la foto */
 .hero-copy{
   grid-area:1 / 1;
-  max-width:780px;
+  max-width:720px;justify-self:start;
+  padding:clamp(24px,2.8vw,40px);
+  background:rgba(16,16,16,.42);
+  -webkit-backdrop-filter:blur(16px) saturate(130%);
+  backdrop-filter:blur(16px) saturate(130%);
+  border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 20px 50px rgba(0,0,0,.35);
   visibility:hidden;opacity:0;
   transition:opacity .5s var(--ease),visibility .5s;
+}
+/* Si el navegador no soporta el desenfoque, se compensa con opacidad */
+@supports not ((backdrop-filter:blur(2px)) or (-webkit-backdrop-filter:blur(2px))){
+  .hero-copy{background:rgba(16,16,16,.66)}
 }
 .hero-copy.is-active{visibility:visible;opacity:1}
 .hero-copy > *{
@@ -178,7 +183,7 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;text-transform:uppercas
 
 .hero h1{
   font-size:clamp(40px,5.6vw,76px);letter-spacing:.01em;
-  text-shadow:0 6px 28px rgba(0,0,0,.45);
+  text-shadow:0 2px 12px rgba(0,0,0,.35);
   text-wrap:balance;                 /* evita que quede una palabra suelta */
 }
 .hero p{
@@ -510,6 +515,7 @@ body.footer-fixed .page{margin-bottom:var(--footer-h,0px)}
     transform:translateX(-50%);grid-auto-flow:column;gap:8px;
   }
   .hero-inner{padding-top:34px;padding-bottom:64px}
+  .hero-copy{max-width:100%;padding:22px 20px}
   .hero-copy p{margin-bottom:28px}
   .kicker{font-size:15px;letter-spacing:.18em}
   .btn{padding:14px 26px;font-size:18px}
