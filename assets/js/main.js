@@ -251,7 +251,7 @@
   ];
 
   /* Enlace de WhatsApp con el pedido ya escrito */
-  var WHATSAPP = '34675732136';
+  var WHATSAPP = '34652869704';
 
   function waLink(c) {
     var precio = c.price ? ' (' + c.price + ')' : '';
