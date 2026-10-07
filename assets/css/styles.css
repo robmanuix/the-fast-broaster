@@ -424,6 +424,8 @@ body.footer-fixed .page{margin-bottom:var(--footer-h,0px)}
 .locations::after{
   content:"";position:absolute;left:50%;top:0;bottom:56px;width:1px;background:rgba(255,255,255,.18);
 }
+.loc-cols{display:grid;grid-template-columns:auto auto;justify-content:start;column-gap:clamp(20px,3vw,36px)}
+.loc-cols .loc-line{margin-bottom:14px}
 .location .link-arrow{display:flex;width:fit-content}
 .location .link-arrow + .link-arrow{margin-top:12px}
 .location h3{font-size:26px;letter-spacing:.1em;margin-bottom:22px}
