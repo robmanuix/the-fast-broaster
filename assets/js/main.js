@@ -185,15 +185,15 @@
       alt: 'Combo Mini: una pieza de pollo crujiente con patatas y bebida',
       desc: '1 pieza de pollo + patatas + bebida.' },
 
+    { cat: 'Pollo', name: 'Lowcost', price: '4,99 €',
+      img: 'assets/img/menu/08-lowcost.jpg',
+      alt: 'Combo Lowcost: pieza de pollo con arroz y patatas',
+      desc: '1 pieza de pollo + 1 porción de arroz + 1 porción de patatas.' },
+
     { cat: 'Alitas', name: 'Combo 1 Alitas', price: '3,99 €',
       img: 'assets/img/menu/07-combo1-alitas.jpg',
       alt: 'Combo de tres alitas de pollo crujientes con patatas y bebida',
       desc: '3 alitas + patatas + bebida.' },
-
-    { cat: 'Pollo', name: 'Lowcost', price: '4,99 €',
-      img: 'assets/img/menu/08-lowcost.jpg',
-      alt: 'Combo Lowcost: pieza de pollo con arroz y papa',
-      desc: '1 pieza de pollo + 1 porción de arroz + 1 porción de patatas.' },
 
     { cat: 'Alitas', name: 'Combo 2 Alitas', price: '6 €',
       img: 'assets/img/menu/09-combo2-alitas.jpg',
