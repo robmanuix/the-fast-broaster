@@ -155,19 +155,19 @@
   /* Las fotos van en assets/img/menu/. Si aún no existe el archivo,
      la tarjeta muestra un marcador y el sitio no se rompe. */
   var combos = [
-    { cat: 'Pollo', name: 'Duocronch', price: '6,99 €', plano: true,
+    { cat: 'Pollo', name: 'Duo Crunch', price: '6,99 €', plano: true,
       img: 'assets/img/menu/01-duocronch.jpg',
-      alt: 'Combo Duocronch: dos piezas de pollo crujiente con patatas y bebida',
+      alt: 'Combo Duo Crunch: dos piezas de pollo crujiente con patatas y bebida',
       desc: '2 piezas de pollo + patatas + bebida.' },
 
-    { cat: 'Pollo', name: 'Triplecronch', price: '8,99 €',
+    { cat: 'Pollo', name: 'Triple Crunch', price: '8,99 €',
       img: 'assets/img/menu/02-triplecronch.jpg',
-      alt: 'Combo Triplecronch: tres piezas de pollo crujiente con patatas y bebida',
+      alt: 'Combo Triple Crunch: tres piezas de pollo crujiente con patatas y bebida',
       desc: '3 piezas de pollo + patatas + bebida.' },
 
-    { cat: 'Pollo', name: 'Megacronch', price: '16,95 €',
+    { cat: 'Pollo', name: 'Mega Crunch', price: '16,95 €',
       img: 'assets/img/menu/03-megacronch.jpg',
-      alt: 'Combo Megacronch: seis piezas de pollo crujiente con patatas y bebidas',
+      alt: 'Combo Mega Crunch: seis piezas de pollo crujiente con patatas y bebidas',
       desc: '6 piezas de pollo + 2 raciones de patatas + 2 bebidas.' },
 
     { cat: 'Pollo', name: 'Combo Criminal', price: '23,95 €',
