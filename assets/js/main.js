@@ -156,7 +156,7 @@
      la tarjeta muestra un marcador y el sitio no se rompe. */
   var combos = [
     { cat: 'Pollo', name: 'Duo Crunch', price: '6,99 €', plano: true,
-      img: 'assets/img/menu/01-duocronch.jpg',
+      img: 'assets/img/menu/01-duocrunch.png',
       alt: 'Combo Duo Crunch: dos piezas de pollo crujiente con patatas y bebida',
       desc: '2 piezas de pollo + patatas + bebida.' },
 
@@ -222,14 +222,14 @@
       ],
       img: 'assets/img/menu/12-fritada-chicharron.jpg',
       alt: 'Fritada de chicharrón con ensalada criolla y patacón',
-      desc: 'Ensalada criolla, patacón o patata frita y cerdo frito.' },
+      desc: 'Ensalada criolla, patacón o patatas fritas y cerdo frito.' },
 
     { cat: 'Porciones', name: 'Porción de Arroz', price: '3 €',
       img: 'assets/img/menu/13-porcion-arroz.jpg',
       alt: 'Porción de arroz blanco',
       desc: 'Porción individual de arroz blanco recién hecho.' },
 
-    { cat: 'Porciones', name: 'Porción de Patata Frita', price: '3 €',
+    { cat: 'Porciones', name: 'Porción de Patatas Fritas', price: '3 €',
       img: 'assets/img/menu/14-porcion-patata.jpg',
       alt: 'Porción de patatas fritas doradas',
       desc: 'Porción individual de patatas fritas doradas y crujientes.' },
