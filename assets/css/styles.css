@@ -698,3 +698,9 @@ html.cart-open,html.cart-open body{overflow:hidden}
 @media (prefers-reduced-motion:reduce){
   .cart-btn.bump,.cart-count.bump,.cart-item{animation:none}
 }
+
+/* Móvil: menú (barras) a la izquierda y carrito a la derecha */
+@media (max-width:760px){
+  .header-actions{flex:1;margin-left:0;justify-content:space-between}
+  .burger{order:-1}
+}
