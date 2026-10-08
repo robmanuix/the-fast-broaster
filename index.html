@@ -21,7 +21,6 @@
       <a href="#combos" class="nav-link">Combos</a>
       <a href="#nosotros" class="nav-link">Quienes Somos</a>
       <a href="#contacto" class="nav-link">Contacto</a>
-      <a href="#combos" class="nav-link nav-cta">Pedir ahora</a>
     </nav>
 
     <a href="#top" class="brand" aria-label="The Fast Broaster - Inicio">
@@ -40,7 +39,10 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.4a4.6 4.6 0 1 0 0 9.2 4.6 4.6 0 0 0 0-9.2m0 7.6a3 3 0 1 1 0-6 3 3 0 0 1 0 6m6-7.8a1.07 1.07 0 1 1-2.15 0 1.07 1.07 0 0 1 2.15 0M21 8.2c-.05-1.4-.37-2.64-1.4-3.66-1.02-1.02-2.26-1.34-3.66-1.42-1.44-.08-5.76-.08-7.2 0-1.4.07-2.63.39-3.66 1.41C4.06 5.55 3.74 6.79 3.66 8.19c-.08 1.44-.08 5.76 0 7.2.07 1.4.39 2.64 1.42 3.66 1.03 1.02 2.26 1.34 3.66 1.42 1.44.08 5.76.08 7.2 0 1.4-.08 2.64-.4 3.66-1.42 1.02-1.02 1.34-2.26 1.42-3.66.08-1.44.08-5.75 0-7.19m-1.91 8.73a3.04 3.04 0 0 1-1.71 1.71c-1.18.47-3.99.36-5.3.36s-4.12.1-5.3-.36a3.04 3.04 0 0 1-1.71-1.71c-.47-1.18-.36-3.99-.36-5.3s-.1-4.12.36-5.3a3.04 3.04 0 0 1 1.71-1.71c1.18-.47 3.99-.36 5.3-.36s4.12-.1 5.3.36a3.04 3.04 0 0 1 1.71 1.71c.47 1.18.36 3.99.36 5.3s.11 4.12-.36 5.3"/></svg>
         </span></li>
       </ul>
-      <a href="#combos" class="btn btn-red btn-sm">Pedir ahora</a>
+      <button type="button" class="cart-btn" id="cartBtn" aria-label="Abrir mi pedido (vacío)" aria-haspopup="dialog" aria-controls="cartPanel">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 3.5h2.6l2.2 10.6a1.6 1.6 0 0 0 1.6 1.3h8.5a1.6 1.6 0 0 0 1.6-1.2L20.8 7.6H6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.6" cy="19.6" r="1.5" fill="currentColor"/><circle cx="17.2" cy="19.6" r="1.5" fill="currentColor"/></svg>
+        <span class="cart-count" id="cartCount" data-n="0" aria-hidden="true">0</span>
+      </button>
       <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
         <span></span><span></span><span></span>
       </button>
@@ -121,7 +123,7 @@
           <h3>Festín</h3>
           <p>Cubo de 16 piezas de nuestro pollo crujiente, recién hecho.</p>
           <p class="cubo-price">30 €</p>
-          <a href="https://wa.me/34652869704?text=Hola%2C%20quiero%20pedir%3A%20Fest%C3%ADn%20%E2%80%94%20cubo%20de%2016%20piezas%20%2830%20%E2%82%AC%29.%20%C2%BFMe%20confirman%20disponibilidad%3F" target="_blank" rel="noopener" class="btn btn-red">Pedir el Festín</a>
+          <button type="button" class="btn btn-red" data-add data-id="menu-festin" data-name="Festín" data-variant="" data-price="3000" data-img="assets/img/menu/menu-01-festin.jpg">Agregar</button>
         </div>
       </article>
 
@@ -134,7 +136,7 @@
           <h3>Brutal</h3>
           <p>Cubo de 20 piezas de nuestro pollo crujiente. El más grande de la casa.</p>
           <p class="cubo-price">35 €</p>
-          <a href="https://wa.me/34652869704?text=Hola%2C%20quiero%20pedir%3A%20Brutal%20%E2%80%94%20cubo%20de%2020%20piezas%20%2835%20%E2%82%AC%29.%20%C2%BFMe%20confirman%20disponibilidad%3F" target="_blank" rel="noopener" class="btn btn-red">Pedir el Brutal</a>
+          <button type="button" class="btn btn-red" data-add data-id="menu-brutal" data-name="Brutal" data-variant="" data-price="3500" data-img="assets/img/menu/menu-02-brutal.jpg">Agregar</button>
         </div>
       </article>
     </div>
@@ -239,6 +241,36 @@
 <a href="#top" class="to-top" id="toTop" aria-label="Volver arriba">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.6 14.9 12 8.5l6.4 6.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg>
 </a>
+
+<!-- ============ PEDIDO (carrito) ============ -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-panel" id="cartPanel" role="dialog" aria-modal="true" aria-labelledby="cartTitle" inert>
+  <header class="cart-head">
+    <h2 id="cartTitle">Tu pedido</h2>
+    <button type="button" class="cart-close" id="cartClose" aria-label="Cerrar mi pedido">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </header>
+
+  <div class="cart-body">
+    <ul class="cart-items" id="cartItems"></ul>
+    <div class="cart-empty" id="cartEmpty">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 3.5h2.6l2.2 10.6a1.6 1.6 0 0 0 1.6 1.3h8.5a1.6 1.6 0 0 0 1.6-1.2L20.8 7.6H6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.6" cy="19.6" r="1.4" fill="currentColor"/><circle cx="17.2" cy="19.6" r="1.4" fill="currentColor"/></svg>
+      <p>Aún no has agregado nada.</p>
+      <span>Elige tus combos y menús, y envía el pedido por WhatsApp.</span>
+    </div>
+  </div>
+
+  <footer class="cart-foot">
+    <div class="cart-total"><span>Total</span><strong id="cartTotal">0,00 €</strong></div>
+    <div class="cart-actions">
+      <button type="button" class="btn btn-outline" id="cartKeep">Seguir pidiendo</button>
+      <a class="btn btn-red" id="cartSend" target="_blank" rel="noopener" aria-disabled="true">Pedir por WhatsApp</a>
+    </div>
+    <p class="cart-note">Te confirmamos disponibilidad por WhatsApp. El pago se hace en el local o a la entrega.</p>
+  </footer>
+</aside>
+<div class="sr-only" id="cartLive" role="status" aria-live="polite"></div>
 
 <script src="assets/js/main.js"></script>
 </body>
