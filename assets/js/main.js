@@ -251,7 +251,7 @@
   ];
 
   /* WhatsApp que recibe los pedidos */
-  var WHATSAPP = '34652869704';
+  var WHATSAPP = '34635315708';  // NÚMERO DE PRUEBA para pedidos (el de contacto del footer no cambia)
 
   /* '6,99 €' -> 699 (céntimos), para sumar sin errores de decimales */
   function toCents(txt) {
