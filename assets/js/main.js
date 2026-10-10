@@ -562,7 +562,15 @@
     });
 
     sendEl.addEventListener('click', function (e) {
-      if (sendEl.getAttribute('aria-disabled') === 'true') e.preventDefault();
+      if (sendEl.getAttribute('aria-disabled') === 'true') { e.preventDefault(); return; }
+      /* El pedido ya va a WhatsApp: se vacía el carrito. Se espera un instante
+         para que el navegador abra el enlace antes de quitarle el href. */
+      setTimeout(function () {
+        items = [];
+        update();
+        close();
+        live.textContent = 'Pedido enviado por WhatsApp. Tu carrito quedó vacío.';
+      }, 400);
     });
     btn.addEventListener('click', function () { isOpen() ? close() : open(); });
     closeBtn.addEventListener('click', close);
