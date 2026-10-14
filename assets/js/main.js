@@ -251,7 +251,7 @@
   ];
 
   /* WhatsApp que recibe los pedidos */
-  var WHATSAPP = '34635315708';  // NÚMERO DE PRUEBA para pedidos (el de contacto del footer no cambia)
+  var WHATSAPP = '34652869704';  // número que recibe los pedidos del carrito
 
   /* '6,99 €' -> 699 (céntimos), para sumar sin errores de decimales */
   function toCents(txt) {
@@ -359,6 +359,7 @@
 
     var items = load();
     var lastFocus = null;
+    var sending = false;   /* true mientras se abre WhatsApp: el enlace no se toca */
 
     /* --- almacenamiento (si falla, el carrito funciona igual en memoria) --- */
     function load() {
@@ -447,7 +448,9 @@
       emptyEl.hidden = !vacio;
       listEl.hidden = vacio;
       totalEl.textContent = money(total());
-      if (vacio) {
+      if (sending) {
+        /* se deja el enlace tal cual hasta que el navegador lo abra */
+      } else if (vacio) {
         sendEl.removeAttribute('href');
         sendEl.setAttribute('aria-disabled', 'true');
       } else {
@@ -563,13 +566,20 @@
 
     sendEl.addEventListener('click', function (e) {
       if (sendEl.getAttribute('aria-disabled') === 'true') { e.preventDefault(); return; }
-      /* El pedido ya va a WhatsApp: se vacía el carrito. Se espera un instante
-         para que el navegador abra el enlace antes de quitarle el href. */
+      /* El pedido ya va a WhatsApp: el carrito se vacía AL INSTANTE (también el
+         guardado del navegador), así no queda nada aunque la página se suspenda
+         al cambiar a WhatsApp. El enlace se conserva unos instantes para que el
+         navegador lo abra y luego se cierra el panel. */
+      sending = true;
+      items = [];
+      save();
+      render();
+      syncBadge();
+      live.textContent = 'Pedido enviado por WhatsApp. Tu carrito quedó vacío.';
       setTimeout(function () {
-        items = [];
-        update();
+        sending = false;
+        render();
         close();
-        live.textContent = 'Pedido enviado por WhatsApp. Tu carrito quedó vacío.';
       }, 400);
     });
     btn.addEventListener('click', function () { isOpen() ? close() : open(); });
