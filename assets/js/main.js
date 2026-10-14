@@ -250,6 +250,11 @@
       desc: '10 tiras de pechuga empanizadas extra crujientes.' }
   ];
 
+  /* Versión de las fotos: súbela cada vez que cambies una imagen sin cambiarle el
+     nombre, así el navegador y la caché de GitHub Pages descargan la nueva. */
+  var IMG_V = '20261014';
+  function imgSrc(path) { return path ? path + '?v=' + IMG_V : path; }
+
   /* WhatsApp que recibe los pedidos */
   var WHATSAPP = '34652869704';  // número que recibe los pedidos del carrito
 
@@ -299,7 +304,7 @@
     }
 
     row.innerHTML =
-      '<figure class="combo-photo"><img src="' + c.img + '" alt="' + c.alt + '" loading="lazy"></figure>' +
+      '<figure class="combo-photo"><img src="' + imgSrc(c.img) + '" alt="' + c.alt + '" loading="lazy"></figure>' +
       '<div class="combo-body">' +
         '<span class="tag">' + c.cat + '</span>' +
         '<h3>' + c.name + '</h3>' +
@@ -425,7 +430,7 @@
         li.className = 'cart-item';
         li.dataset.id = i.id;
         li.innerHTML =
-          '<div class="ci-thumb"><img src="' + escapeHTML(i.img) + '" alt="" loading="lazy"></div>' +
+          '<div class="ci-thumb"><img src="' + escapeHTML(imgSrc(i.img)) + '" alt="" loading="lazy"></div>' +
           '<div class="ci-info">' +
             '<h3>' + escapeHTML(i.name) + '</h3>' +
             (i.variant ? '<span class="ci-variant">' + escapeHTML(i.variant) + '</span>' : '') +
@@ -517,7 +522,7 @@
       var dot = document.createElement('div');
       dot.className = 'fly';
       dot.style.cssText = 'left:' + x0 + 'px;top:' + y0 + 'px;width:' + size + 'px;height:' + size + 'px;' +
-                          'background-image:url("' + data.img + '")';
+                          'background-image:url("' + imgSrc(data.img) + '")';
       document.body.appendChild(dot);
 
       var anim = dot.animate([
