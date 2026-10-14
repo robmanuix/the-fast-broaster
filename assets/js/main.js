@@ -161,12 +161,12 @@
       desc: '2 piezas de pollo + 1 ración de patatas + bebida.' },
 
     { cat: 'Pollo', name: 'Triple Crunch', price: '8,99 €',
-      img: 'assets/img/menu/02-triplecronch.jpg',
+      img: 'assets/img/menu/02-triplecronch.png',
       alt: 'Combo Triple Crunch: tres piezas de pollo crujiente con patatas y bebida',
       desc: '3 piezas de pollo + 1 ración de patatas + bebida.' },
 
     { cat: 'Pollo', name: 'Mega Crunch', price: '16,95 €',
-      img: 'assets/img/menu/03-megacronch.jpg',
+      img: 'assets/img/menu/03-megacronch.png',
       alt: 'Combo Mega Crunch: seis piezas de pollo crujiente con patatas y bebidas',
       desc: '6 piezas de pollo + 2 raciones de patatas + 2 bebidas.' },
 
@@ -181,27 +181,27 @@
       desc: '12 piezas de pollo + 2 raciones de patatas + 1 bebida grande.' },
 
     { cat: 'Pollo', name: 'Combo Mini', price: '3,99 €',
-      img: 'assets/img/menu/06-combo-mini.jpg',
+      img: 'assets/img/menu/06-combo-mini.png',
       alt: 'Combo Mini: una pieza de pollo crujiente con patatas y bebida',
       desc: '1 pieza de pollo + 1 ración de patatas + bebida.' },
 
     { cat: 'Pollo', name: 'Lowcost', price: '4,99 €',
-      img: 'assets/img/menu/08-lowcost.jpg',
+      img: 'assets/img/menu/08-lowcost.png',
       alt: 'Combo Lowcost: pieza de pollo con arroz y patatas',
       desc: '1 pieza de pollo + 1 ración de arroz + 1 ración de patatas.' },
 
     { cat: 'Alitas', name: 'Combo 1 Alitas', price: '3,99 €',
-      img: 'assets/img/menu/07-combo1-alitas.jpg',
+      img: 'assets/img/menu/07-combo1-alitas.png',
       alt: 'Combo de tres alitas de pollo crujientes con patatas y bebida',
       desc: '3 alitas + 1 ración de patatas + bebida.' },
 
     { cat: 'Alitas', name: 'Combo 2 Alitas', price: '6 €',
-      img: 'assets/img/menu/09-combo2-alitas.jpg',
+      img: 'assets/img/menu/09-combo2-alitas.png',
       alt: 'Combo de seis alitas de pollo crujientes con patatas y bebida',
       desc: '6 alitas + 1 ración de patatas + bebida.' },
 
     { cat: 'Alitas', name: 'Combo 3 Alitas', price: '10,99 €',
-      img: 'assets/img/menu/10-combo3-alitas.jpg',
+      img: 'assets/img/menu/10-combo3-alitas.png',
       alt: 'Combo de doce alitas de pollo crujientes con patatas y dos bebidas',
       desc: '12 alitas + 1 ración de patatas + 2 bebidas.' },
 
@@ -230,7 +230,7 @@
       desc: 'Porción individual de arroz blanco recién hecho.' },
 
     { cat: 'Porciones', name: 'Porción de Patatas Fritas', price: '3 €',
-      img: 'assets/img/menu/14-porcion-patata.jpg',
+      img: 'assets/img/menu/14-porcion-patata.png',
       alt: 'Porción de patatas fritas doradas',
       desc: 'Porción individual de patatas fritas doradas y crujientes.' },
 
