@@ -3,275 +3,110 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Fast Broaster | El pollo más crujiente y jugoso</title>
-<meta name="description" content="The Fast Broaster: pollo broaster crujiente y jugoso, hecho al instante. Combos, food truck para eventos y dos locales para atenderte.">
+<title>The Fast Broaster | Estamos en construcción</title>
+<meta name="description" content="Estamos preparando la nueva web de The Fast Broaster. Mientras tanto, haz tu pedido por WhatsApp.">
 <link rel="icon" href="assets/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600&family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#E8322A;--red-dark:#C4241D;--yellow:#F2C233;--darker:#1C1C1C;--white:#fff;
+    --font-display:"Teko","Arial Narrow",sans-serif;--font-body:"Overpass",Arial,sans-serif;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:var(--font-body);color:#fff;line-height:1.6;
+    background:
+      radial-gradient(900px 520px at 50% -8%,rgba(232,50,42,.55),transparent 70%),
+      radial-gradient(700px 420px at 50% 112%,rgba(242,194,51,.22),transparent 70%),
+      var(--darker);
+    display:grid;grid-template-columns:minmax(0,1fr);place-items:center;padding:32px 20px;overflow-x:hidden;
+  }
+  .wrap{width:100%;max-width:620px;text-align:center;display:flex;flex-direction:column;align-items:center}
+  .logo{
+    width:clamp(150px,34vw,210px);height:auto;border-radius:50%;background:#f9f9f9;padding:6px;
+    box-shadow:0 18px 50px rgba(0,0,0,.45);animation:float 4.5s ease-in-out infinite;
+  }
+  .kicker{
+    margin-top:34px;font-family:var(--font-display);font-size:19px;font-weight:500;
+    letter-spacing:.26em;text-transform:uppercase;color:var(--yellow);
+    display:inline-flex;align-items:center;gap:12px;
+  }
+  .kicker::before,.kicker::after{content:"";width:30px;height:2px;background:var(--red)}
+  h1{
+    font-family:var(--font-display);font-weight:700;text-transform:uppercase;
+    font-size:clamp(34px,9vw,84px);line-height:.95;letter-spacing:.02em;margin-top:12px;overflow-wrap:anywhere;
+  }
+  h1 span{color:var(--red)}
+  p.lead{margin-top:20px;max-width:46ch;color:#d9d9d9;font-size:clamp(16px,2.4vw,18px)}
+
+  /* barra de progreso animada */
+  .bar{margin-top:34px;width:min(360px,80%);height:8px;border-radius:8px;background:rgba(255,255,255,.14);overflow:hidden}
+  .bar i{display:block;height:100%;width:42%;border-radius:8px;
+    background:linear-gradient(90deg,var(--red),var(--yellow));animation:slide 2.2s var(--ease) infinite}
+
+  .actions{margin-top:38px;display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;font-family:var(--font-display);font-size:20px;
+    font-weight:500;letter-spacing:.12em;text-transform:uppercase;line-height:1;
+    padding:15px 28px;border:2px solid transparent;text-decoration:none;
+    transition:transform .25s var(--ease),background-color .25s,color .25s,border-color .25s;
+  }
+  .btn:hover{transform:translateY(-3px)}
+  .btn svg{width:22px;height:22px;fill:currentColor}
+  .btn-red{background:var(--red);color:#fff}
+  .btn-red:hover{background:#fff;color:var(--red)}
+  .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+  .btn-ghost:hover{background:#fff;color:var(--darker)}
+
+  .info{margin-top:44px;padding-top:26px;border-top:1px solid rgba(255,255,255,.16);width:100%;
+    font-size:14px;color:#b9b9b9;display:grid;gap:4px}
+  .info strong{font-family:var(--font-display);font-size:20px;letter-spacing:.12em;color:#fff;font-weight:500;text-transform:uppercase}
+  .copy{margin-top:22px;font-size:12px;color:#8d8d8d}
+
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  @keyframes slide{0%{transform:translateX(-110%)}100%{transform:translateX(250%)}}
+  .wrap>*{opacity:0;transform:translateY(18px);animation:in .7s var(--ease) forwards}
+  .wrap>*:nth-child(2){animation-delay:.1s}.wrap>*:nth-child(3){animation-delay:.2s}
+  .wrap>*:nth-child(4){animation-delay:.3s}.wrap>*:nth-child(5){animation-delay:.4s}
+  .wrap>*:nth-child(6){animation-delay:.5s}.wrap>*:nth-child(7){animation-delay:.6s}
+  .wrap>*:nth-child(8){animation-delay:.7s}
+  @keyframes in{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){
+    *{animation-duration:.01ms!important;animation-iteration-count:1!important}
+    .wrap>*{opacity:1;transform:none}
+  }
+  @media (max-width:480px){.btn{width:100%;justify-content:center}.actions{width:100%}}
+</style>
 </head>
 <body>
+  <main class="wrap">
+    <img class="logo" src="assets/img/logo.png" alt="Logo The Fast Broaster">
+    <span class="kicker">Muy pronto</span>
+    <h1>Estamos en <span>construcción</span></h1>
+    <p class="lead">Estamos preparando nuestra nueva web para que pidas el pollo más crujiente y jugoso de Hospitalet de forma rápida y sencilla.</p>
+    <div class="bar" role="img" aria-label="Web en construcción"><i></i></div>
 
-<!-- ============ HEADER ============ -->
-<header class="site-header" id="header">
-  <div class="container header-inner">
-    <nav class="nav" id="nav">
-      <a href="#top" class="nav-link active">Inicio</a>
-      <a href="#combos" class="nav-link">Combos</a>
-      <a href="#nosotros" class="nav-link">Quienes Somos</a>
-      <a href="#contacto" class="nav-link">Contacto</a>
-    </nav>
-
-    <a href="#top" class="brand" aria-label="The Fast Broaster - Inicio">
-      <img src="assets/img/logo.png" alt="Logo The Fast Broaster">
-    </a>
-
-    <div class="header-actions">
-      <ul class="socials">
-        <li><a href="https://www.tiktok.com/@fastbroaster.bcn" target="_blank" rel="noopener" aria-label="TikTok">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.9 5.88a4.32 4.32 0 0 1-1.05-2.55V3h-3.13v12.5a2.62 2.62 0 0 1-2.63 2.53 2.63 2.63 0 0 1 0-5.26c.28 0 .54.05.79.13v-3.23a5.9 5.9 0 0 0-.79-.05 5.86 5.86 0 1 0 5.86 5.86V9.1a7.42 7.42 0 0 0 4.35 1.4V7.38a4.35 4.35 0 0 1-3.4-1.5"/></svg>
-        </a></li>
-        <li><span class="soon" aria-label="Facebook (próximamente)" title="Próximamente">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6C16.4 3.55 15.42 3.5 14.3 3.5c-2.35 0-3.95 1.43-3.95 4.06V9.9H7.6V13h2.75v8z"/></svg>
-        </span></li>
-        <li><span class="soon" aria-label="Instagram (próximamente)" title="Próximamente">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.4a4.6 4.6 0 1 0 0 9.2 4.6 4.6 0 0 0 0-9.2m0 7.6a3 3 0 1 1 0-6 3 3 0 0 1 0 6m6-7.8a1.07 1.07 0 1 1-2.15 0 1.07 1.07 0 0 1 2.15 0M21 8.2c-.05-1.4-.37-2.64-1.4-3.66-1.02-1.02-2.26-1.34-3.66-1.42-1.44-.08-5.76-.08-7.2 0-1.4.07-2.63.39-3.66 1.41C4.06 5.55 3.74 6.79 3.66 8.19c-.08 1.44-.08 5.76 0 7.2.07 1.4.39 2.64 1.42 3.66 1.03 1.02 2.26 1.34 3.66 1.42 1.44.08 5.76.08 7.2 0 1.4-.08 2.64-.4 3.66-1.42 1.02-1.02 1.34-2.26 1.42-3.66.08-1.44.08-5.75 0-7.19m-1.91 8.73a3.04 3.04 0 0 1-1.71 1.71c-1.18.47-3.99.36-5.3.36s-4.12.1-5.3-.36a3.04 3.04 0 0 1-1.71-1.71c-.47-1.18-.36-3.99-.36-5.3s-.1-4.12.36-5.3a3.04 3.04 0 0 1 1.71-1.71c1.18-.47 3.99-.36 5.3-.36s4.12-.1 5.3.36a3.04 3.04 0 0 1 1.71 1.71c.47 1.18.36 3.99.36 5.3s.11 4.12-.36 5.3"/></svg>
-        </span></li>
-      </ul>
-      <button type="button" class="cart-btn" id="cartBtn" aria-label="Abrir mi pedido (vacío)" aria-haspopup="dialog" aria-controls="cartPanel">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 3.5h2.6l2.2 10.6a1.6 1.6 0 0 0 1.6 1.3h8.5a1.6 1.6 0 0 0 1.6-1.2L20.8 7.6H6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.6" cy="19.6" r="1.5" fill="currentColor"/><circle cx="17.2" cy="19.6" r="1.5" fill="currentColor"/></svg>
-        <span class="cart-count" id="cartCount" data-n="0" aria-hidden="true">0</span>
-      </button>
-      <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</header>
-
-<div class="page" id="top">
-
-<!-- ============ HERO ============ -->
-<section class="hero" id="inicio">
-
-  <!-- Carrusel de fondo -->
-  <div class="hero-bg">
-    <figure class="hero-slide is-active"><img src="assets/img/slide-01.webp" alt="Presas de pollo broaster recién salidas, humeantes" fetchpriority="high"></figure>
-    <figure class="hero-slide"><img src="assets/img/slide-02.webp" alt="Plato de tiras de pollo crujientes con salsa de la casa" loading="lazy"></figure>
-    <figure class="hero-slide"><img src="assets/img/slide-03.webp" alt="Tira de pollo partida mostrando su interior jugoso" loading="lazy"></figure>
-    <div class="hero-overlay" aria-hidden="true"></div>
-  </div>
-
-  <!-- Copy -->
-  <div class="hero-inner container">
-    <article class="hero-copy is-active">
-      <span class="kicker">Hecho al instante</span>
-      <h1>Crujiente por fuera,<br>jugoso por dentro</h1>
-      <p>La receta secreta que dora nuestro pollo en el momento justo, solo para ti.</p>
-      <a href="#combos" class="btn btn-yellow">Ver combos</a>
-    </article>
-
-    <article class="hero-copy">
-      <span class="kicker">Para compartir</span>
-      <h1>Del broaster<br>directo a tu mesa</h1>
-      <p>Porciones generosas, patatas recién hechas y las salsas de la casa que ya conoces.</p>
-      <a href="#combos" class="btn btn-yellow">Arma tu combo</a>
-    </article>
-
-    <article class="hero-copy">
-      <span class="kicker">Recién salido</span>
-      <h1>Ese momento<br>en que cruje</h1>
-      <p>Lo preparamos al instante, para que nunca lo pruebes tibio.</p>
-      <a href="#contacto" class="btn btn-yellow">Pedir ahora</a>
-    </article>
-  </div>
-
-  <!-- Controles -->
-  <button class="hero-arrow prev" id="heroPrev" type="button" aria-label="Imagen anterior">&#8249;</button>
-  <button class="hero-arrow next" id="heroNext" type="button" aria-label="Imagen siguiente">&#8250;</button>
-  <div class="hero-dots" id="heroDots" role="tablist" aria-label="Carrusel principal"></div>
-  <span class="hero-progress" id="heroProgress" aria-hidden="true"></span>
-</section>
-
-<!-- ============ COMBOS ============ -->
-<section class="combos" id="combos">
-  <img class="deco deco-tr" src="assets/img/crispy-01.png" alt="" aria-hidden="true" data-speed="-0.24">
-  <img class="deco deco-bl" src="assets/img/crispy-02.png" alt="" aria-hidden="true" data-speed="0.30">
-  <div class="container">
-    <h2 class="section-title reveal">Mejores combos</h2>
-
-    <div class="combo-list" id="comboList">
-      <!-- filas generadas por JS -->
-    </div>
-  </div>
-</section>
-
-<!-- ============ MENU / CUBOS ============ -->
-<section class="cubos" id="menu">
-  <div class="container">
-    <h2 class="section-title reveal">Menú</h2>
-    <p class="section-lead reveal">Cubos de pollo crujiente para compartir. Solo pollo, sin acompañamientos.</p>
-
-    <div class="cubo-grid">
-      <article class="cubo reveal">
-        <figure class="cubo-photo">
-          <img src="assets/img/menu/menu-01-festin.jpg?v=20261014" alt="Cubo Festín con dieciséis piezas de pollo crujiente" loading="lazy">
-        </figure>
-        <div class="cubo-body">
-          <span class="tag">16 piezas</span>
-          <h3>Festín</h3>
-          <p>Cubo de 16 piezas de nuestro pollo crujiente, recién hecho.</p>
-          <p class="cubo-price">30 €</p>
-          <button type="button" class="btn btn-red" data-add data-id="menu-festin" data-name="Festín" data-variant="" data-price="3000" data-img="assets/img/menu/menu-01-festin.jpg?v=20261014">Agregar</button>
-        </div>
-      </article>
-
-      <article class="cubo reveal">
-        <figure class="cubo-photo">
-          <img src="assets/img/menu/menu-02-brutal.jpg?v=20261014" alt="Cubo Brutal con veinte piezas de pollo crujiente" loading="lazy">
-        </figure>
-        <div class="cubo-body">
-          <span class="tag">20 piezas</span>
-          <h3>Brutal</h3>
-          <p>Cubo de 20 piezas de nuestro pollo crujiente. El más grande de la casa.</p>
-          <p class="cubo-price">35 €</p>
-          <button type="button" class="btn btn-red" data-add data-id="menu-brutal" data-name="Brutal" data-variant="" data-price="3500" data-img="assets/img/menu/menu-02-brutal.jpg?v=20261014">Agregar</button>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ DELIVERY ============ -->
-<section class="foodtruck" id="delivery">
-  <div class="ft-media">
-    <img src="assets/img/foodtruck.jpg" alt="Clienta disfrutando pollo broaster recién llegado" loading="lazy">
-  </div>
-  <div class="ft-panel reveal">
-    <span class="kicker">Delivery</span>
-    <h2><strong>No salgas.</strong><br>Que el crujido te busque</h2>
-    <p>Pedimos, freímos y salimos. Tu combo llega calientito a la puerta de tu casa, en menos de 30 minutos.</p>
-    <!-- CTA oculto temporalmente
-    <a href="#contacto" class="btn btn-ghost">Pedir delivery</a>
-    -->
-  </div>
-</section>
-
-<!-- ============ NOSOTROS ============ -->
-<section class="about" id="nosotros">
-  <div class="container about-grid">
-    <div class="about-text reveal">
-      <h2>Pasión por el<br>pollo crujiente</h2>
-      <p>Nos apasiona hacerte feliz sirviéndote el pollo frito más sabroso. Ingredientes frescos de la mejor calidad, nuestra receta secreta y una preparación al instante son el secreto para ofrecerte una experiencia inolvidable en cada mordisco.</p>
-      <a href="#combos" class="btn btn-red">Ver combos</a>
-    </div>
-    <div class="about-gallery reveal">
-      <figure class="g1"><img src="assets/img/about-1.jpg" alt="Cliente disfrutando pollo crujiente con patatas"></figure>
-      <figure class="g2"><img src="assets/img/about-2.jpg" alt="Plato de pollo broaster con patatas fritas"></figure>
-      <figure class="g3"><img src="assets/img/about-3.jpg" alt="Tira de pollo crujiente con salsa"></figure>
-    </div>
-  </div>
-</section>
-
-</div><!-- /.page -->
-
-<!-- ============ CONTACTO / FOOTER ============ -->
-<footer class="site-footer" id="contacto">
-  <div class="container">
-    <div class="locations">
-      <div class="location reveal">
-        <h3>Local #1</h3>
-        <p class="loc-line">
-          <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5"/></svg>
-          <span>Florida, 45<br>08905 Hospitalet de Ll.<br><em>(cerca plz. Pajaritos)</em></span>
-        </p>
-        <p class="loc-line">
-          <span class="metro" aria-label="Metro">M</span>
-          <span>L1 Torrassa</span>
-        </p>
-        <div class="loc-cols">
-          <p class="loc-line">
-            <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1z"/></svg>
-            <span><span class="loc-label">Teléfono</span><a href="tel:+34931419477">931 419 477</a></span>
-          </p>
-          <p class="loc-line">
-            <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 5-1.3A10 10 0 1 0 12 2m0 18.2c-1.6 0-3.2-.4-4.5-1.3l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2m4.5-6.1c-.2-.1-1.4-.7-1.7-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.9 1-.9 2.3-.1 3.6a10 10 0 0 0 4 3.6c1.5.6 2.4.6 3.2.4.5-.1 1.4-.6 1.6-1.2.2-.6.2-1 .1-1.1z"/></svg>
-            <span><span class="loc-label">WhatsApp</span>
-              <a href="https://wa.me/34652869704" target="_blank" rel="noopener">652 869 704</a>
-            </span>
-          </p>
-        </div>
-        <span class="rule"></span>
-        <a href="https://www.google.com/maps/search/?api=1&amp;query=Carrer+de+Florida+45+08905+Hospitalet+de+Llobregat" target="_blank" rel="noopener" class="link-arrow">Cómo llegar <span>&rarr;</span></a>
-      </div>
-
-      <div class="location reveal">
-        <h3>Local #2</h3>
-        <p class="loc-line">
-          <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5"/></svg>
-          <span>Diógenes, 16<br>08905 Hospitalet de Ll.</span>
-        </p>
-        <span class="rule"></span>
-        <a href="https://www.google.com/maps/search/?api=1&amp;query=Carrer+de+Di%C3%B3genes+16+08905+Hospitalet+de+Llobregat" target="_blank" rel="noopener" class="link-arrow">Cómo llegar <span>&rarr;</span></a>
-      </div>
-
+    <div class="actions">
+      <a class="btn btn-red" href="https://wa.me/34652869704?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 5-1.3A10 10 0 1 0 12 2m0 18.2c-1.6 0-3.2-.4-4.5-1.3l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2m4.5-6.1c-.2-.1-1.4-.7-1.7-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.9 1-.9 2.3-.1 3.6a10 10 0 0 0 4 3.6c1.5.6 2.4.6 3.2.4.5-.1 1.4-.6 1.6-1.2.2-.6.2-1 .1-1.1z"/></svg>
+        Pedir por WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="https://www.tiktok.com/@fastbroaster.bcn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.9 5.88a4.32 4.32 0 0 1-1.05-2.55V3h-3.13v12.5a2.62 2.62 0 0 1-2.63 2.53 2.63 2.63 0 0 1 0-5.26c.28 0 .54.05.79.13v-3.23a5.9 5.9 0 0 0-.79-.05 5.76 5.76 0 1 0 5.76 5.76V9.2a7.4 7.4 0 0 0 4.32 1.38V7.45a4.3 4.3 0 0 1-3.27-1.57z"/></svg>
+        Síguenos
+      </a>
     </div>
 
-    <div class="follow">
-      <span>Síguenos</span>
-      <ul class="socials socials-yellow">
-        <li><a href="https://www.tiktok.com/@fastbroaster.bcn" target="_blank" rel="noopener" aria-label="TikTok">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.9 5.88a4.32 4.32 0 0 1-1.05-2.55V3h-3.13v12.5a2.62 2.62 0 0 1-2.63 2.53 2.63 2.63 0 0 1 0-5.26c.28 0 .54.05.79.13v-3.23a5.9 5.9 0 0 0-.79-.05 5.86 5.86 0 1 0 5.86 5.86V9.1a7.42 7.42 0 0 0 4.35 1.4V7.38a4.35 4.35 0 0 1-3.4-1.5"/></svg>
-        </a></li>
-        <li><span class="soon" aria-label="Facebook (próximamente)" title="Próximamente">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5h1.65V3.6C16.4 3.55 15.42 3.5 14.3 3.5c-2.35 0-3.95 1.43-3.95 4.06V9.9H7.6V13h2.75v8z"/></svg>
-        </span></li>
-        <li><span class="soon" aria-label="Instagram (próximamente)" title="Próximamente">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.4a4.6 4.6 0 1 0 0 9.2 4.6 4.6 0 0 0 0-9.2m0 7.6a3 3 0 1 1 0-6 3 3 0 0 1 0 6m6-7.8a1.07 1.07 0 1 1-2.15 0 1.07 1.07 0 0 1 2.15 0M21 8.2c-.05-1.4-.37-2.64-1.4-3.66-1.02-1.02-2.26-1.34-3.66-1.42-1.44-.08-5.76-.08-7.2 0-1.4.07-2.63.39-3.66 1.41C4.06 5.55 3.74 6.79 3.66 8.19c-.08 1.44-.08 5.76 0 7.2.07 1.4.39 2.64 1.42 3.66 1.03 1.02 2.26 1.34 3.66 1.42 1.44.08 5.76.08 7.2 0 1.4-.08 2.64-.4 3.66-1.42 1.02-1.02 1.34-2.26 1.42-3.66.08-1.44.08-5.75 0-7.19m-1.91 8.73a3.04 3.04 0 0 1-1.71 1.71c-1.18.47-3.99.36-5.3.36s-4.12.1-5.3-.36a3.04 3.04 0 0 1-1.71-1.71c-.47-1.18-.36-3.99-.36-5.3s-.1-4.12.36-5.3a3.04 3.04 0 0 1 1.71-1.71c1.18-.47 3.99-.36 5.3-.36s4.12-.1 5.3.36a3.04 3.04 0 0 1 1.71 1.71c.47 1.18.36 3.99.36 5.3s.11 4.12-.36 5.3"/></svg>
-        </span></li>
-      </ul>
+    <div class="info">
+      <strong>Local #1</strong>
+      <span>Florida, 45 · 08905 Hospitalet de Llobregat</span>
+      <span>Tel. 931 419 477 · WhatsApp 652 869 704</span>
     </div>
-
-    <p class="copyright">The Fast Broaster &copy; <span id="year">2026</span>.</p>
-  </div>
-</footer>
-
-<!-- Botón flotante para volver arriba -->
-<a href="#top" class="to-top" id="toTop" aria-label="Volver arriba">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.6 14.9 12 8.5l6.4 6.4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg>
-</a>
-
-<!-- ============ PEDIDO (carrito) ============ -->
-<div class="cart-overlay" id="cartOverlay"></div>
-<aside class="cart-panel" id="cartPanel" role="dialog" aria-modal="true" aria-labelledby="cartTitle" inert>
-  <header class="cart-head">
-    <h2 id="cartTitle">Tu pedido</h2>
-    <button type="button" class="cart-close" id="cartClose" aria-label="Cerrar mi pedido">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
-  </header>
-
-  <div class="cart-body">
-    <ul class="cart-items" id="cartItems"></ul>
-    <div class="cart-empty" id="cartEmpty">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 3.5h2.6l2.2 10.6a1.6 1.6 0 0 0 1.6 1.3h8.5a1.6 1.6 0 0 0 1.6-1.2L20.8 7.6H6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.6" cy="19.6" r="1.4" fill="currentColor"/><circle cx="17.2" cy="19.6" r="1.4" fill="currentColor"/></svg>
-      <p>Aún no has agregado nada.</p>
-      <span>Elige tus combos y menús, y envía el pedido por WhatsApp.</span>
-    </div>
-  </div>
-
-  <footer class="cart-foot">
-    <div class="cart-total"><span>Total</span><strong id="cartTotal">0,00 €</strong></div>
-    <div class="cart-actions">
-      <button type="button" class="btn btn-outline" id="cartKeep">Seguir pidiendo</button>
-      <a class="btn btn-red" id="cartSend" target="_blank" rel="noopener" aria-disabled="true">Pedir por WhatsApp</a>
-    </div>
-    <p class="cart-note">Te confirmamos disponibilidad por WhatsApp. El pago se hace en el local o a la entrega.</p>
-  </footer>
-</aside>
-<div class="sr-only" id="cartLive" role="status" aria-live="polite"></div>
-
-<script src="assets/js/main.js"></script>
+    <p class="copy">The Fast Broaster &copy; 2026</p>
+  </main>
 </body>
 </html>
