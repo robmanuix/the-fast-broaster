@@ -27,10 +27,20 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      # En el repositorio index.html es la página "Estamos en construcción" (la que se sube
+      # al dominio final por FTP) y home.html es la web completa. Solo para GitHub Pages
+      # se intercambian: aquí la web completa es el inicio.
+      - name: Preparar sitio de GitHub Pages (home.html como inicio)
+        run: |
+          mkdir _site
+          rsync -a --exclude='.git' --exclude='.github' --exclude='_site' --exclude='assets/img/menuBAK' ./ _site/
+          mv _site/index.html _site/construccion.html
+          cp _site/home.html _site/index.html
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: '_site'
 
       - name: Deploy
         id: deployment
