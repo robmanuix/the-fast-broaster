@@ -175,7 +175,7 @@
       alt: 'Combo Criminal: nueve piezas de pollo crujiente con patatas y bebida de 2 litros',
       desc: '9 piezas de pollo + 3 raciones de patatas + bebida de 2 litros.' },
 
-    { cat: 'Pollo', name: 'Mega Party', price: '30 €',
+    { cat: 'Pollo', name: 'Mega Party', price: '28 €',
       img: 'assets/img/menu/05-mega-party.jpg',
       alt: 'Mega Party: doce piezas de pollo crujiente con patatas y bebida grande',
       desc: '12 piezas de pollo + 2 raciones de patatas + 1 bebida grande.' },
@@ -189,6 +189,12 @@
       img: 'assets/img/menu/08-lowcost.png',
       alt: 'Combo Lowcost: pieza de pollo con arroz y patatas',
       desc: '1 pieza de pollo + 1 ración de arroz + 1 ración de patatas.' },
+
+    { cat: 'Kids', name: 'Combo Kids', price: '5 €',
+      options: ['Nuggets', 'Fingers'],
+      img: 'assets/img/menu/19-combo-kids.png',
+      alt: 'Combo Kids: nuggets o fingers de pollo con patatas, bebida y postre',
+      desc: 'Nuggets o fingers + 1 ración de patatas + bebida + postre.' },
 
     { cat: 'Alitas', name: 'Combo 1 Alitas', price: '3,99 €',
       img: 'assets/img/menu/07-combo1-alitas.png',
@@ -224,39 +230,71 @@
       alt: 'Fritada de chicharrón con ensalada criolla y patacón',
       desc: 'Ensalada criolla, patacón o patatas fritas y cerdo frito.' },
 
-    { cat: 'Porciones', name: 'Porción de Arroz', price: '3 €',
+    { cat: 'Porciones', name: 'Porción de Arroz',
+      prices: [
+        { label: 'Pequeña', value: '3 €' },
+        { label: 'Grande', value: '5 €' }
+      ],
       img: 'assets/img/menu/13-porcion-arroz.jpg',
       alt: 'Porción de arroz blanco',
-      desc: 'Porción individual de arroz blanco recién hecho.' },
+      desc: 'Arroz blanco recién hecho.' },
 
-    { cat: 'Porciones', name: 'Porción de Patatas Fritas', price: '3 €',
+    { cat: 'Porciones', name: 'Porción de Patatas Fritas',
+      prices: [
+        { label: 'Pequeña', value: '3 €' },
+        { label: 'Grande', value: '5 €' }
+      ],
       img: 'assets/img/menu/14-porcion-patata.png',
       alt: 'Porción de patatas fritas doradas',
-      desc: 'Porción individual de patatas fritas doradas y crujientes.' },
+      desc: 'Patatas fritas doradas y crujientes.' },
 
-    { cat: 'Porciones', name: 'Porción de Ensalada', price: '3 €',
+    { cat: 'Porciones', name: 'Porción de Ensalada',
+      prices: [
+        { label: 'Pequeña', value: '3 €' },
+        { label: 'Grande', value: '5 €' }
+      ],
       img: 'assets/img/menu/15-porcion-ensalada.jpg',
       alt: 'Porción de ensalada fresca',
-      desc: 'Porción individual de ensalada fresca del día.' },
+      desc: 'Ensalada fresca del día.' },
 
-    { cat: 'Tiras', name: 'Tender Five', price: '7 €',
+    { cat: 'Tiras', name: 'Tender Five', price: '8 €',
       img: 'assets/img/menu/16-tender-five.jpg',
-      alt: 'Cinco tiras de pechuga de pollo empanizadas',
-      desc: '5 tiras de pechuga empanizadas extra crujientes.' },
+      alt: 'Cinco tiras de pechuga de pollo empanizadas con patatas y bebida',
+      desc: '5 tiras de pechuga empanizadas extra crujientes + 1 ración de patatas + bebida.' },
 
     { cat: 'Tiras', name: 'Tender XL', price: '12 €',
       img: 'assets/img/menu/17-tender-xl.jpg',
-      alt: 'Diez tiras de pechuga de pollo empanizadas',
-      desc: '10 tiras de pechuga empanizadas extra crujientes.' }
+      alt: 'Ocho tiras de pechuga de pollo empanizadas con patatas y bebida',
+      desc: '8 tiras de pechuga empanizadas extra crujientes + 1 ración de patatas + bebida.' },
+
+    { cat: 'Tiras', name: 'Tender Familiar', price: '16 €',
+      img: 'assets/img/menu/18-tender-familiar.png',
+      alt: 'Doce tiras de pechuga de pollo empanizadas con patatas y dos bebidas',
+      desc: '12 tiras de pechuga empanizadas extra crujientes + 1 ración de patatas + 2 bebidas.' },
+
+    { cat: 'Hamburguesas', name: 'Hamburguesa Clásica', price: '4 €',
+      img: 'assets/img/menu/20-hamburguesa-clasica.png',
+      alt: 'Hamburguesa clásica con carne, lechuga, tomate, queso cheddar y patatas',
+      desc: 'Carne, lechuga, tomate, queso cheddar, 1 ración de patatas y salsa de la casa.' },
+
+    { cat: 'Hamburguesas', name: 'Hamburguesa Doble', price: '7 €',
+      options: ['Doble carne', 'Doble pollo'],
+      img: 'assets/img/menu/21-hamburguesa-doble.png',
+      alt: 'Hamburguesa doble con doble carne o doble pollo, lechuga, tomate, queso cheddar y patatas',
+      desc: 'Doble carne o doble pollo, lechuga, tomate, queso cheddar, 1 ración de patatas y salsa de la casa.' }
   ];
 
   /* Versión de las fotos: súbela cada vez que cambies una imagen sin cambiarle el
      nombre, así el navegador y la caché de GitHub Pages descargan la nueva. */
-  var IMG_V = '20261014';
+  var IMG_V = '20261029';
   function imgSrc(path) { return path ? path + '?v=' + IMG_V : path; }
 
-  /* WhatsApp que recibe los pedidos */
-  var WHATSAPP = '34652869704';  // número que recibe los pedidos del carrito
+  /* Locales que reciben pedidos. Cada uno tiene su propio WhatsApp.
+     OJO: el número del Local #2 es TEMPORAL, cámbialo aquí cuando tenga el definitivo. */
+  var LOCALES = [
+    { id: 'l1', name: 'Local #1', addr: 'Florida, 45', phone: '34652869704' },
+    { id: 'l2', name: 'Local #2', addr: 'Diógenes, 16', phone: '34670512722' }   /* TEMPORAL */
+  ];
 
   /* '6,99 €' -> 699 (céntimos), para sumar sin errores de decimales */
   function toCents(txt) {
@@ -271,6 +309,18 @@
     return (cents / 100).toFixed(2).replace('.', ',') + ' €';
   }
 
+  /* Opciones exclusivas (p. ej. Nuggets o Fingers): una sola a la vez */
+  function optionsHTML(name, options) {
+    var group = 'opt-' + slug(name);
+    var h = '<div class="opt" role="radiogroup" aria-label="Elige una opción para ' + name + '">' +
+            '<span class="opt-label">Elige una opción</span><div class="opt-chips">';
+    options.forEach(function (o) {
+      h += '<label class="chip"><input type="radio" name="' + group + '" value="' + o + '">' +
+           '<span>' + o + '</span></label>';
+    });
+    return h + '</div><p class="opt-hint" hidden>Elige ' + options.join(' o ') + ' para agregar.</p></div>';
+  }
+
   /* ---------- Lista de combos, uno debajo de otro ---------- */
   var list = document.getElementById('comboList');
 
@@ -280,8 +330,9 @@
     row.className = 'combo-row' + (c.plano ? ' sin-filtro' : '');
 
     /* Atributos para el botón Agregar (el carrito los lee al hacer clic) */
-    function addBtn(variant, cents, extra) {
+    function addBtn(variant, cents, extra, options) {
       return '<button type="button" class="btn btn-red ' + (extra || '') + '" data-add' +
+        (options ? ' data-options="' + options.join('|') + '" aria-disabled="true"' : '') +
         ' data-id="' + slug(c.name + ' ' + variant) + '"' +
         ' data-name="' + c.name + '"' +
         ' data-variant="' + variant + '"' +
@@ -300,7 +351,12 @@
       priceHTML += '</ul>';
     } else {
       priceHTML = '<p class="combo-price">' + c.price + '</p>';
-      ctaHTML = addBtn('', toCents(c.price));
+      if (c.options) {
+        /* Elegir UNA opción (botones tipo etiqueta) antes de agregar */
+        ctaHTML = optionsHTML(c.name, c.options) + addBtn('', toCents(c.price), '', c.options);
+      } else {
+        ctaHTML = addBtn('', toCents(c.price));
+      }
     }
 
     row.innerHTML =
@@ -360,9 +416,14 @@
     var closeBtn = document.getElementById('cartClose');
     var keepBtn  = document.getElementById('cartKeep');
     var live     = document.getElementById('cartLive');
+    var localBox = document.getElementById('cartLocal');
+    var localGrid = document.getElementById('cartLocalGrid');
+    var localHint = document.getElementById('cartLocalHint');
     if (!btn || !panel) return;
 
-    var items = load();
+    var KEY_LOCAL = 'tfb-local-v1';
+    var localId = loadLocal();
+    var items = syncCatalog(load());
     var lastFocus = null;
     var sending = false;   /* true mientras se abre WhatsApp: el enlace no se toca */
 
@@ -382,6 +443,44 @@
     function save() {
       try { localStorage.setItem(KEY, JSON.stringify(items)); } catch (e) {}
     }
+    function loadLocal() {
+      try {
+        var v = localStorage.getItem(KEY_LOCAL);
+        return LOCALES.some(function (l) { return l.id === v; }) ? v : '';
+      } catch (e) { return ''; }
+    }
+    function saveLocal() {
+      try { localStorage.setItem(KEY_LOCAL, localId); } catch (e) {}
+    }
+    function currentLocal() {
+      return LOCALES.filter(function (l) { return l.id === localId; })[0] || null;
+    }
+
+    /* --- catálogo vigente: un pedido guardado con precios viejos se actualiza solo --- */
+    function buildCatalog() {
+      var cat = {}, any = false;
+      Array.prototype.forEach.call(document.querySelectorAll('[data-add]'), function (b) {
+        any = true;
+        var base = { name: b.dataset.name, price: parseInt(b.dataset.price, 10), img: b.dataset.img || '' };
+        if (b.dataset.options) {
+          b.dataset.options.split('|').forEach(function (o) {
+            cat[slug(base.name + ' ' + o)] = { name: base.name, variant: o, price: base.price, img: base.img };
+          });
+        } else {
+          cat[b.dataset.id] = { name: base.name, variant: b.dataset.variant || '', price: base.price, img: base.img };
+        }
+      });
+      return any ? cat : null;
+    }
+    function syncCatalog(list) {
+      var cat = buildCatalog();
+      if (!cat) return list;
+      return list.filter(function (i) { return cat[i.id]; }).map(function (i) {
+        var c = cat[i.id];
+        i.name = c.name; i.variant = c.variant; i.price = c.price; i.img = c.img;
+        return i;
+      });
+    }
 
     /* --- cálculos --- */
     function units() { return items.reduce(function (n, i) { return n + i.qty; }, 0); }
@@ -398,7 +497,9 @@
         var nombre = i.name + (i.variant ? ' (' + i.variant + ')' : '');
         return '• ' + i.qty + ' x ' + nombre + ' — ' + money(i.qty * i.price);
       });
-      return 'Hola, quiero hacer este pedido en The Fast Broaster:\n\n' +
+      var loc = currentLocal();
+      return 'Hola, quiero hacer este pedido en The Fast Broaster' +
+             (loc ? ' (' + loc.name + ' · ' + loc.addr + ')' : '') + ':\n\n' +
              lineas.join('\n') +
              '\n\nTotal: ' + money(total()) +
              '\n\n¿Me confirman disponibilidad? Gracias.';
@@ -453,14 +554,26 @@
       emptyEl.hidden = !vacio;
       listEl.hidden = vacio;
       totalEl.textContent = money(total());
+      /* selector de local: solo si hay productos */
+      localBox.hidden = vacio;
+      Array.prototype.forEach.call(localGrid.querySelectorAll('input'), function (r) {
+        r.checked = (r.value === localId);
+      });
+      var loc = currentLocal();
       if (sending) {
         /* se deja el enlace tal cual hasta que el navegador lo abra */
       } else if (vacio) {
         sendEl.removeAttribute('href');
         sendEl.setAttribute('aria-disabled', 'true');
+        sendEl.textContent = 'Pedir por WhatsApp';
+      } else if (!loc) {
+        sendEl.removeAttribute('href');
+        sendEl.setAttribute('aria-disabled', 'true');
+        sendEl.textContent = 'Elige un local';
       } else {
-        sendEl.href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(mensaje());
+        sendEl.href = 'https://wa.me/' + loc.phone + '?text=' + encodeURIComponent(mensaje());
         sendEl.removeAttribute('aria-disabled');
+        sendEl.innerHTML = 'Pedir por WhatsApp<small>' + loc.name + '</small>';
       }
     }
 
@@ -544,12 +657,41 @@
     document.addEventListener('click', function (e) {
       var addBtn = e.target.closest && e.target.closest('[data-add]');
       if (addBtn) {
+        var variant = addBtn.dataset.variant || '';
+        var id = addBtn.dataset.id;
+        if (addBtn.dataset.options) {
+          /* producto con opción exclusiva: hay que elegir una */
+          var scope = addBtn.closest('.combo-body, .cubo-body') || addBtn.parentNode;
+          var chosen = scope.querySelector('.opt input:checked');
+          if (!chosen) {
+            var hint = scope.querySelector('.opt-hint');
+            var grp = scope.querySelector('.opt');
+            if (hint) hint.hidden = false;
+            if (grp) { grp.classList.remove('need'); void grp.offsetWidth; grp.classList.add('need'); }
+            var first = scope.querySelector('.opt input');
+            if (first) first.focus();
+            return;
+          }
+          variant = chosen.value;
+          id = slug(addBtn.dataset.name + ' ' + variant);
+        }
         add({
-          id: addBtn.dataset.id, name: addBtn.dataset.name,
-          variant: addBtn.dataset.variant || '',
+          id: id, name: addBtn.dataset.name, variant: variant,
           price: parseInt(addBtn.dataset.price, 10), img: addBtn.dataset.img || ''
         }, addBtn);
       }
+    });
+
+    /* al elegir una opción, el botón Agregar se activa */
+    document.addEventListener('change', function (e) {
+      var r = e.target;
+      if (!r.matches || !r.matches('.opt input')) return;
+      var scope = r.closest('.combo-body, .cubo-body');
+      if (!scope) return;
+      var b = scope.querySelector('[data-add][data-options]');
+      if (b) b.removeAttribute('aria-disabled');
+      var hint = scope.querySelector('.opt-hint');
+      if (hint) hint.hidden = true;
     });
 
     listEl.addEventListener('click', function (e) {
@@ -569,8 +711,29 @@
       (again || closeBtn).focus();
     });
 
+    localGrid.innerHTML = LOCALES.map(function (l) {
+      return '<label class="cl-opt"><input type="radio" name="cartLocal" value="' + l.id + '">' +
+             '<span><b>' + l.name + '</b><small>' + l.addr + ' · Hospitalet de Ll.</small></span></label>';
+    }).join('');
+    localGrid.addEventListener('change', function (e) {
+      if (!e.target.matches('input')) return;
+      localId = e.target.value;
+      saveLocal();
+      localHint.hidden = true;
+      render();
+    });
+
     sendEl.addEventListener('click', function (e) {
-      if (sendEl.getAttribute('aria-disabled') === 'true') { e.preventDefault(); return; }
+      if (sendEl.getAttribute('aria-disabled') === 'true') {
+        e.preventDefault();
+        if (items.length && !currentLocal()) {       /* falta elegir el local */
+          localHint.hidden = false;
+          localBox.classList.remove('need'); void localBox.offsetWidth; localBox.classList.add('need');
+          var r1 = localGrid.querySelector('input');
+          if (r1) r1.focus();
+        }
+        return;
+      }
       /* El pedido ya va a WhatsApp: el carrito se vacía AL INSTANTE (también el
          guardado del navegador), así no queda nada aunque la página se suspenda
          al cambiar a WhatsApp. El enlace se conserva unos instantes para que el
@@ -595,7 +758,7 @@
       if (!isOpen()) return;
       if (e.key === 'Escape') { close(); return; }
       if (e.key === 'Tab') {                       /* el foco se queda dentro del panel */
-        var f = panel.querySelectorAll('button:not([disabled]), a[href]');
+        var f = panel.querySelectorAll('button:not([disabled]), a[href], input:not([disabled])');
         if (!f.length) return;
         var first = f[0], last = f[f.length - 1];
         if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }

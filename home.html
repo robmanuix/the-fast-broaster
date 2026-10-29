@@ -112,32 +112,45 @@
 <section class="cubos" id="menu">
   <div class="container">
     <h2 class="section-title reveal">Menú</h2>
-    <p class="section-lead reveal">Cubos de pollo crujiente para compartir. Solo pollo, sin acompañamientos.</p>
+    <p class="section-lead reveal">Cubos y tiras para compartir, recién hechos.</p>
 
     <div class="cubo-grid">
       <article class="cubo reveal">
         <figure class="cubo-photo">
-          <img src="assets/img/menu/menu-01-festin.jpg?v=20261014" alt="Cubo Festín con dieciséis piezas de pollo crujiente" loading="lazy">
+          <img src="assets/img/menu/menu-01-festin.jpg?v=20261029" alt="Cubo Festín con dieciséis piezas de pollo crujiente" loading="lazy">
         </figure>
         <div class="cubo-body">
           <span class="tag">16 piezas</span>
           <h3>Festín</h3>
           <p>Cubo de 16 piezas de nuestro pollo crujiente, recién hecho.</p>
           <p class="cubo-price">30 €</p>
-          <button type="button" class="btn btn-red" data-add data-id="menu-festin" data-name="Festín" data-variant="" data-price="3000" data-img="assets/img/menu/menu-01-festin.jpg?v=20261014">Agregar</button>
+          <button type="button" class="btn btn-red" data-add data-id="menu-festin" data-name="Festín" data-variant="" data-price="3000" data-img="assets/img/menu/menu-01-festin.jpg">Agregar</button>
         </div>
       </article>
 
       <article class="cubo reveal">
         <figure class="cubo-photo">
-          <img src="assets/img/menu/menu-02-brutal.jpg?v=20261014" alt="Cubo Brutal con veinte piezas de pollo crujiente" loading="lazy">
+          <img src="assets/img/menu/menu-03-cubo-familiar.png?v=20261029" alt="Cubo Familiar con dieciséis piezas de pollo crujiente, patatas y bebida grande" loading="lazy">
+        </figure>
+        <div class="cubo-body">
+          <span class="tag">16 piezas</span>
+          <h3>Cubo Familiar</h3>
+          <p>Cubo de 16 piezas + 2 raciones de patatas + 1 bebida grande.</p>
+          <p class="cubo-price">33 €</p>
+          <button type="button" class="btn btn-red" data-add data-id="menu-cubo-familiar" data-name="Cubo Familiar" data-variant="" data-price="3300" data-img="assets/img/menu/menu-03-cubo-familiar.png">Agregar</button>
+        </div>
+      </article>
+
+      <article class="cubo reveal">
+        <figure class="cubo-photo">
+          <img src="assets/img/menu/menu-02-brutal.jpg?v=20261029" alt="Cubo Brutal con veinte piezas de pollo crujiente" loading="lazy">
         </figure>
         <div class="cubo-body">
           <span class="tag">20 piezas</span>
           <h3>Brutal</h3>
           <p>Cubo de 20 piezas de nuestro pollo crujiente. El más grande de la casa.</p>
           <p class="cubo-price">35 €</p>
-          <button type="button" class="btn btn-red" data-add data-id="menu-brutal" data-name="Brutal" data-variant="" data-price="3500" data-img="assets/img/menu/menu-02-brutal.jpg?v=20261014">Agregar</button>
+          <button type="button" class="btn btn-red" data-add data-id="menu-brutal" data-name="Brutal" data-variant="" data-price="3500" data-img="assets/img/menu/menu-02-brutal.jpg">Agregar</button>
         </div>
       </article>
     </div>
@@ -213,6 +226,12 @@
           <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5"/></svg>
           <span>Diógenes, 16<br>08905 Hospitalet de Ll.</span>
         </p>
+        <p class="loc-line">
+          <svg viewBox="0 0 24 24" class="ico" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.8 5-1.3A10 10 0 1 0 12 2m0 18.2c-1.6 0-3.2-.4-4.5-1.3l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2m4.5-6.1c-.2-.1-1.4-.7-1.7-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.9 1-.9 2.3-.1 3.6a10 10 0 0 0 4 3.6c1.5.6 2.4.6 3.2.4.5-.1 1.4-.6 1.6-1.2.2-.6.2-1 .1-1.1z"/></svg>
+          <span><span class="loc-label">WhatsApp</span>
+            <a href="https://wa.me/34670512722" target="_blank" rel="noopener">670 512 722</a>
+          </span>
+        </p>
         <span class="rule"></span>
         <a href="https://www.google.com/maps/search/?api=1&amp;query=Carrer+de+Di%C3%B3genes+16+08905+Hospitalet+de+Llobregat" target="_blank" rel="noopener" class="link-arrow">Cómo llegar <span>&rarr;</span></a>
       </div>
@@ -263,6 +282,11 @@
   </div>
 
   <footer class="cart-foot">
+    <fieldset class="cart-local" id="cartLocal" hidden>
+      <legend>¿A qué local haces el pedido?</legend>
+      <div class="cl-grid" id="cartLocalGrid"></div>
+      <p class="cl-hint" id="cartLocalHint" hidden>Elige un local para enviar tu pedido.</p>
+    </fieldset>
     <div class="cart-total"><span>Total</span><strong id="cartTotal">0,00 €</strong></div>
     <div class="cart-actions">
       <button type="button" class="btn btn-outline" id="cartKeep">Seguir pidiendo</button>
