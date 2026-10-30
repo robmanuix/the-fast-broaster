@@ -192,7 +192,7 @@
 
     { cat: 'Kids', name: 'Combo Kids', price: '5 €',
       options: ['Nuggets', 'Fingers'],
-      img: 'assets/img/menu/19-combo-kids.png',
+      img: 'assets/img/menu/19-combo-kids.jpg',
       alt: 'Combo Kids: nuggets o fingers de pollo con patatas, bebida y postre',
       desc: 'Nuggets o fingers + 1 ración de patatas + bebida + postre.' },
 
@@ -268,18 +268,18 @@
       desc: '8 tiras de pechuga empanizadas extra crujientes + 1 ración de patatas + bebida.' },
 
     { cat: 'Tiras', name: 'Tender Familiar', price: '16 €',
-      img: 'assets/img/menu/18-tender-familiar.png',
+      img: 'assets/img/menu/18-tender-familiar.jpg',
       alt: 'Doce tiras de pechuga de pollo empanizadas con patatas y dos bebidas',
       desc: '12 tiras de pechuga empanizadas extra crujientes + 1 ración de patatas + 2 bebidas.' },
 
     { cat: 'Hamburguesas', name: 'Hamburguesa Clásica', price: '4 €',
-      img: 'assets/img/menu/20-hamburguesa-clasica.png',
+      img: 'assets/img/menu/20-hamburguesa-clasica.jpg',
       alt: 'Hamburguesa clásica con carne, lechuga, tomate, queso cheddar y patatas',
       desc: 'Carne, lechuga, tomate, queso cheddar, 1 ración de patatas y salsa de la casa.' },
 
     { cat: 'Hamburguesas', name: 'Hamburguesa Doble', price: '7 €',
       options: ['Doble carne', 'Doble pollo'],
-      img: 'assets/img/menu/21-hamburguesa-doble.png',
+      img: 'assets/img/menu/21-hamburguesa-doble.jpg',
       alt: 'Hamburguesa doble con doble carne o doble pollo, lechuga, tomate, queso cheddar y patatas',
       desc: 'Doble carne o doble pollo, lechuga, tomate, queso cheddar, 1 ración de patatas y salsa de la casa.' }
   ];
